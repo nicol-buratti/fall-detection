@@ -11,7 +11,7 @@
         </property>
         <property name="text" class="ptolemy.kernel.util.StringAttribute" value="https://www.cs.virginia.edu/~stankovic/psfiles/bsn09-1.pdf">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{400.0, -20.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{400.0, -30.0}">
         </property>
     </property>
     <property name="signalFrequency" class="ptolemy.data.expr.Parameter" value="50">
@@ -30,7 +30,7 @@
         </property>
         <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{275.0, -10.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{275.0, -20.0}">
         </property>
     </property>
     <property name="window_size" class="ptolemy.data.expr.Parameter" value="20">
@@ -49,11 +49,11 @@
         </property>
         <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{155.0, -10.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{155.0, -20.0}">
         </property>
     </property>
     <property name="DE Director" class="ptolemy.domains.de.kernel.DEDirector">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{45.0, 10.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{45.0, 0.0}">
         </property>
     </property>
     <property name="enableBackwardTypeInference" class="ptolemy.data.expr.Parameter" value="true">
@@ -69,15 +69,15 @@
     <entity name="CSVReader" class="ptolemy.actor.lib.io.CSVReader">
         <property name="fileOrURL" class="ptolemy.actor.parameters.FilePortParameter" value="C:\Users\nicki\Desktop\fall-detection\raw_data2.csv">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{225.0, 225.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{225.0, 215.0}">
         </property>
     </entity>
     <entity name="Stop" class="ptolemy.actor.lib.Stop">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{360.0, 255.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{360.0, 245.0}">
         </property>
     </entity>
     <entity name="gyroscope" class="ptolemy.actor.lib.RecordDisassembler">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{440.0, 260.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{440.0, 250.0}">
         </property>
         <port name="gyro_x_list" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -102,7 +102,7 @@
         </port>
     </entity>
     <entity name="accelerometer" class="ptolemy.actor.lib.RecordDisassembler">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{420.0, 120.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{420.0, 110.0}">
         </property>
         <port name="accel_x_list" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -127,7 +127,7 @@
         </port>
     </entity>
     <entity name="RotationComputer" class="ptolemy.actor.TypedCompositeActor">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{765.0, 265.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{765.0, 255.0}">
         </property>
         <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={532, 562, 939, 656}, maximized=false}">
         </property>
@@ -272,7 +272,7 @@
         <link port="AddSubtract.output" relation="relation7"/>
     </entity>
     <entity name="AccelerationComputer" class="ptolemy.actor.TypedCompositeActor">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{760.0, 80.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{760.0, 70.0}">
         </property>
         <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={532, 562, 939, 656}, maximized=false}">
         </property>
@@ -433,15 +433,15 @@
         </property>
         <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[500, 300]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{970.0, 80.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{970.0, 70.0}">
         </property>
         <configure>
 <?plotml <!DOCTYPE plot PUBLIC "-//UC Berkeley//DTD PlotML 1//EN"
 "http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
 <plot>
 <title>TimedPlotter</title>
-<xRange min="0.0" max="415.0"/>
-<yRange min="62.37049999999999" max="575.322"/>
+<xRange min="0.0" max="114.0"/>
+<yRange min="62.37049999999999" max="370.55600000000004"/>
 </plot>?>
         </configure>
     </entity>
@@ -450,20 +450,20 @@
         </property>
         <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[500, 300]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{970.0, 320.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{970.0, 310.0}">
         </property>
         <configure>
 <?plotml <!DOCTYPE plot PUBLIC "-//UC Berkeley//DTD PlotML 1//EN"
 "http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
 <plot>
 <title>TimedPlotter</title>
-<xRange min="0.0" max="415.0"/>
-<yRange min="0.0" max="35.330000000000005"/>
+<xRange min="0.0" max="114.0"/>
+<yRange min="0.010000000000000002" max="35.330000000000005"/>
 </plot>?>
         </configure>
     </entity>
     <entity name="AnglePitchComputer" class="ptolemy.actor.TypedCompositeActor">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{765.0, 150.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{765.0, 140.0}">
         </property>
         <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={527, 221, 939, 656}, maximized=false}">
         </property>
@@ -974,15 +974,15 @@
         </property>
         <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[500, 300]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{970.0, 150.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{970.0, 140.0}">
         </property>
         <configure>
 <?plotml <!DOCTYPE plot PUBLIC "-//UC Berkeley//DTD PlotML 1//EN"
 "http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
 <plot>
 <title>TimedPlotter</title>
-<xRange min="0.0" max="415.0"/>
-<yRange min="-0.500460586687474" max="0.9359305536700115"/>
+<xRange min="0.0" max="114.0"/>
+<yRange min="-0.500460586687474" max="0.4643277436654457"/>
 </plot>?>
         </configure>
     </entity>
@@ -991,34 +991,53 @@
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[352, 186]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{1395.0, 255.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{1395.0, 245.0}">
         </property>
     </entity>
     <entity name="DiscreteClock" class="ptolemy.actor.lib.DiscreteClock">
         <doc>Create periodic timed events.</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{55.0, 215.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{55.0, 205.0}">
         </property>
     </entity>
-    <entity name="AlarmActor" class="ptolemy.actor.TypedCompositeActor">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{1405.0, 315.0}">
+    <entity name="emergencyDelay" class="ptolemy.actor.TypedCompositeActor">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{1405.0, 305.0}">
         </property>
         <property name="DE Director" class="ptolemy.domains.de.kernel.DEDirector">
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{45.0, -135.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{35.0, -330.0}">
             </property>
         </property>
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={610, 392, 1098, 765}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={313, 480, 1098, 765}, maximized=false}">
         </property>
         <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[859, 619]">
         </property>
-        <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0000000000000009">
+        <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0136405695012394">
         </property>
-        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{661.5000000000001, 132.4420955882351}">
+        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{374.1176470588234, -60.67555147058823}">
+        </property>
+        <property name="emergencyDelay" class="ptolemy.data.expr.Parameter" value="10">
+            <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+                <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+                </property>
+            </property>
+            <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+                <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+            </property>
+            <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{110.0, -350.0}">
+            </property>
         </property>
         <port name="activity" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
             <property name="defaultValue" class="ptolemy.data.expr.Parameter" value="">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{5.0, -75.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{370.0, -265.0}">
             </property>
         </port>
         <entity name="FSMActor" class="ptolemy.domains.modal.kernel.FSMActor">
@@ -1027,7 +1046,7 @@
     <entity name="StateLibrary" class="ptolemy.kernel.CompositeEntity"><input source="ptolemy/configs/basicUtilities.xml"></input><entity name="State" class="ptolemy.domains.modal.kernel.State"><property name="_centerName" class="ptolemy.kernel.util.Attribute"></property></entity></entity>
   </configure>
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{135.0, -65.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{500.0, -230.0}">
             </property>
             <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={610, 392, 939, 656}, maximized=false}">
             </property>
@@ -1039,7 +1058,7 @@
             </property>
             <port name="activity" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{10.0, 245.0}">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[15.0, 210.0]">
                 </property>
                 <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
@@ -1048,7 +1067,7 @@
                 <property name="input"/>
                 <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[10.0, 195.0]">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[10.0, 260.0]">
                 </property>
             </port>
             <port name="alarm" class="ptolemy.actor.TypedIOPort">
@@ -1093,9 +1112,9 @@
             <relation name="relation3" class="ptolemy.domains.modal.kernel.Transition">
                 <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="alarm = true">
                 </property>
-                <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="2.7231704627463245">
+                <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="2.779857780380339">
                 </property>
-                <property name="gamma" class="ptolemy.data.expr.Parameter" value="-1.5134052359165477">
+                <property name="gamma" class="ptolemy.data.expr.Parameter" value="-1.5454234594056002">
                 </property>
                 <property name="defaultTransition" class="ptolemy.data.expr.Parameter" value="true">
                     <display name="default"/>
@@ -1108,14 +1127,8 @@
             <link port="Alarm.outgoingPort" relation="relation2"/>
             <link port="Alarm.outgoingPort" relation="relation3"/>
         </entity>
-        <entity name="TimeDelay" class="ptolemy.actor.lib.TimeDelay">
-            <property name="delay" class="ptolemy.actor.parameters.PortParameter" value="1/signalFrequency">
-            </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{1025.0, -55.0}">
-            </property>
-        </entity>
         <entity name="WarningMessage" class="ptolemy.actor.lib.Expression">
-            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="&quot;? WARNING ?\nFALL DETECTED\nAre you okay? [yes/no]&quot;">
+            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="&quot;?WARNING?\nFALL DETECTED\nAre you okay? [yes/no]&quot;">
             </property>
             <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
                 <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
@@ -1125,17 +1138,23 @@
                 <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                 </property>
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{410.0, -65.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{800.0, -230.0}">
             </property>
             <port name="in" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
             </port>
         </entity>
+        <entity name="TimeDelay" class="ptolemy.actor.lib.TimeDelay">
+            <property name="delay" class="ptolemy.actor.parameters.PortParameter" value="1/signalFrequency">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{290.0, -220.0}">
+            </property>
+        </entity>
         <entity name="InteractiveShell2" class="ptolemy.actor.lib.gui.InteractiveShell">
-            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={514, 540, 670, 521}, maximized=false}">
+            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={882, 786, 670, 521}, maximized=false}">
             </property>
             <doc>Produce strings from an interactive shell on the screen</doc>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{680.0, -55.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{1095.0, -220.0}">
             </property>
         </entity>
         <entity name="Expression4" class="ptolemy.actor.lib.Expression">
@@ -1149,56 +1168,66 @@
                 <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                 </property>
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{870.0, -55.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{105.0, -220.0}">
             </property>
             <port name="in" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
             </port>
         </entity>
         <relation name="relation4" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;activity._location&quot;,x=5.0,y=-75.0}, tail={id=&quot;FSMActor.activity&quot;,x=135.0,y=-65.0}, points={} } }">
-            </property>
-        </relation>
-        <relation name="relation3" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;FSMActor.user_input&quot;,x=135.0,y=-65.0}, tail={id=&quot;TimeDelay.output&quot;,x=1025.0,y=-55.0}, points={40.0,-55.0,40.0,-5.0,1090.0,-5.0,1090.0,-55.0} } }">
-            </property>
-        </relation>
-        <relation name="relation8" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;InteractiveShell2.input&quot;,x=680.0,y=-55.0}, tail={id=&quot;WarningMessage.output&quot;,x=410.0,y=-65.0}, points={} } }">
-            </property>
-        </relation>
-        <relation name="relation10" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression4.in&quot;,x=870.0,y=-55.0}, tail={id=&quot;InteractiveShell2.output&quot;,x=680.0,y=-55.0}, points={} } }">
-            </property>
-        </relation>
-        <relation name="relation" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;TimeDelay.input&quot;,x=1025.0,y=-55.0}, tail={id=&quot;Expression4.output&quot;,x=870.0,y=-55.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;activity._location&quot;,x=370.0,y=-265.0}, tail={id=&quot;FSMActor.activity&quot;,x=500.0,y=-230.0}, points={405.0,-265.0,405.0,-240.0} } }">
             </property>
         </relation>
         <relation name="relation2" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;WarningMessage.in&quot;,x=410.0,y=-65.0}, tail={id=&quot;FSMActor.alarm&quot;,x=135.0,y=-65.0}, points={} } }">
+            <vertex name="vertex1" value="{590.0, -230.0}">
+            </vertex>
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;relation2.vertex1&quot;,x=590.0,y=-230.0}, tail={id=&quot;FSMActor.alarm&quot;,x=500.0,y=-230.0}, points={} },{ head={id=&quot;WarningMessage.in&quot;,x=800.0,y=-230.0}, tail={id=&quot;relation2.vertex1&quot;,x=590.0,y=-230.0}, points={} },{ head={id=&quot;.TimeDelay2.input&quot;,x=805.0,y=-255.0}, tail={id=&quot;relation2.vertex1&quot;,x=605.0,y=-255.0}, points={} } }">
             </property>
+        </relation>
+        <relation name="relation3" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;FSMActor.user_input&quot;,x=500.0,y=-230.0}, tail={id=&quot;relation3.vertex&quot;,x=375.0,y=-220.0}, points={} },{ head={id=&quot;TimeDelay.output&quot;,x=290.0,y=-220.0}, tail={id=&quot;relation3.vertex&quot;,x=375.0,y=-220.0}, points={} } }">
+            </property>
+            <vertex name="vertex" value="{375.0, -220.0}">
+            </vertex>
+        </relation>
+        <relation name="relation8" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;WarningMessage.output&quot;,x=800.0,y=-230.0}, tail={id=&quot;relation8.vertex&quot;,x=1010.0,y=-230.0}, points={} },{ head={id=&quot;InteractiveShell2.input&quot;,x=1095.0,y=-220.0}, tail={id=&quot;relation8.vertex&quot;,x=1010.0,y=-230.0}, points={} } }">
+            </property>
+            <vertex name="vertex" value="{1010.0, -230.0}">
+            </vertex>
+        </relation>
+        <relation name="relation" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;TimeDelay.input&quot;,x=290.0,y=-220.0}, tail={id=&quot;relation.vertex&quot;,x=220.0,y=-220.0}, points={} },{ head={id=&quot;Expression4.output&quot;,x=105.0,y=-220.0}, tail={id=&quot;relation.vertex&quot;,x=220.0,y=-220.0}, points={} } }">
+            </property>
+            <vertex name="vertex" value="{220.0, -220.0}">
+            </vertex>
+        </relation>
+        <relation name="relation10" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;.WarningMessage2.output&quot;,x=1265.0,y=-250.0}, tail={id=&quot;relation10.vertex&quot;,x=1380.0,y=-250.0}, points={} },{ head={id=&quot;relation10.vertex&quot;,x=5.0,y=-220.0}, tail={id=&quot;InteractiveShell2.output&quot;,x=1095.0,y=-220.0}, points={5.0,-295.0,1190.0,-295.0,1190.0,-220.0} },{ head={id=&quot;Expression4.in&quot;,x=105.0,y=-220.0}, tail={id=&quot;relation10.vertex&quot;,x=5.0,y=-220.0}, points={} } }">
+            </property>
+            <vertex name="vertex" value="{5.0, -220.0}">
+            </vertex>
         </relation>
         <link port="activity" relation="relation4"/>
         <link port="FSMActor.activity" relation="relation4"/>
         <link port="FSMActor.user_input" relation="relation3"/>
         <link port="FSMActor.alarm" relation="relation2"/>
-        <link port="TimeDelay.input" relation="relation"/>
-        <link port="TimeDelay.output" relation="relation3"/>
         <link port="WarningMessage.output" relation="relation8"/>
         <link port="WarningMessage.in" relation="relation2"/>
+        <link port="TimeDelay.input" relation="relation"/>
+        <link port="TimeDelay.output" relation="relation3"/>
         <link port="InteractiveShell2.input" relation="relation8"/>
         <link port="InteractiveShell2.output" relation="relation10"/>
         <link port="Expression4.output" relation="relation"/>
         <link port="Expression4.in" relation="relation10"/>
     </entity>
-    <entity name="ActivityDetectionFSM2" class="ptolemy.domains.modal.kernel.FSMActor">
+    <entity name="ActivityDetectionFSM" class="ptolemy.domains.modal.kernel.FSMActor">
         <property name="_library" class="ptolemy.moml.LibraryAttribute">
             <configure>
     <entity name="StateLibrary" class="ptolemy.kernel.CompositeEntity"><input source="ptolemy/configs/basicUtilities.xml"></input><entity name="State" class="ptolemy.domains.modal.kernel.State"><property name="_centerName" class="ptolemy.kernel.util.Attribute"></property></entity></entity>
   </configure>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{1205.0, 255.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{1205.0, 245.0}">
         </property>
         <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={610, 392, 939, 656}, maximized=false}">
         </property>
@@ -1250,23 +1279,27 @@
             <property name="input"/>
             <property name="defaultValue" class="ptolemy.data.expr.Parameter" value="">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{25.0, 190.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{25.0, 195.0}">
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
             </property>
         </port>
         <port name="isJogging" class="ptolemy.domains.modal.modal.RefinementPort">
             <property name="input"/>
             <property name="defaultValue" class="ptolemy.data.expr.Parameter" value="">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{25.0, 255.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{25.0, 260.0}">
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
             </property>
         </port>
         <port name="activity" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{2895.0, 255.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{1215.0, 260.0}">
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
@@ -1277,35 +1310,37 @@
             </property>
             <property name="_location" class="ptolemy.kernel.util.Location" value="{25.0, 320.0}">
             </property>
+            <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
+            </property>
         </port>
         <entity name="walking" class="ptolemy.domains.modal.kernel.State">
             <property name="isInitialState" class="ptolemy.data.expr.Parameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{1045.0, 70.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{590.0, 70.0}">
             </property>
             <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </entity>
         <entity name="jogging" class="ptolemy.domains.modal.kernel.State">
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{1080.0, 460.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{530.0, 465.0}">
             </property>
             <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </entity>
         <entity name="fall" class="ptolemy.domains.modal.kernel.State">
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{2025.0, 335.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{910.0, 335.0}">
             </property>
             <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </entity>
         <entity name="prefall" class="ptolemy.domains.modal.kernel.State">
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{1365.0, 210.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{660.0, 210.0}">
             </property>
             <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </entity>
         <relation name="relation" class="ptolemy.domains.modal.kernel.Transition">
-            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="angle_pitch &lt;= 423.81 &amp;&amp; angle_pitch &lt;= 165.60">
+            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="isJogging">
             </property>
             <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="activity = &quot;walk to jogging&quot;">
             </property>
@@ -1313,11 +1348,11 @@
             </property>
             <property name="gamma" class="ptolemy.data.expr.Parameter" value="0.6658852663987522">
             </property>
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;jogging._location&quot;,x=1080.0,y=460.0}, tail={id=&quot;walking._location&quot;,x=1045.0,y=70.0}, points={1056.0051879882812,441.0729064941406,1056.0051879882812,443.5729064941406,1056.0051879882812,441.90625,1056.0051879882812,440.2395935058594,1056.0051879882812,434.40625,900.572021484375,431.4895935058594,745.138916015625,428.5729064941406,434.2725830078125,428.5729064941406,278.83941650390625,424.40625,123.40625,420.2395935058594,123.40625,411.90625,123.40625,403.8255310058594,123.40625,395.7447814941406,123.40625,387.9166564941406,123.40625,380.0885314941406,123.40625,372.2604064941406,123.40625,364.4322814941406,123.40625,350.3515625,123.40625,336.2708435058594,123.40625,315.9375,123.40625,301.0234375,123.40625,286.109375,123.40625,276.6145935058594,123.40625,267.1197814941406,123.40625,257.625,123.40625,248.1302032470703,123.40625,231.10504150390625,123.40625,214.07986450195312,123.40625,189.52430725097656,123.40625,174.58245849609375,123.40625,159.640625,123.40625,154.3125,123.40625,148.984375,123.40625,143.65625,123.40625,138.328125,123.40625,130.2473907470703,123.40625,122.16666412353516,123.40625,111.33333587646484,273.5881042480469,105.91666412353516,423.76995849609375,100.5,724.1336669921875,100.5,874.3155517578125,97.58333587646484,1024.4973754882812,94.66666412353516,1024.4973754882812,88.83333587646484,1024.4973754882812,87.16666412353516,1024.4973754882812,85.5,1024.4973754882812,88.0}, labelLocation={x=127.40625,y=263.6354064941406} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;jogging._location&quot;,x=530.0,y=465.0}, tail={id=&quot;walking._location&quot;,x=590.0,y=70.0}, points={507.484375,448.3229064941406,507.484375,450.8229064941406,507.484375,449.15625,507.484375,447.4895935058594,507.484375,441.65625,443.4713439941406,438.7395935058594,379.4583435058594,435.8229064941406,251.4322967529297,435.8229064941406,187.41927337646484,430.40625,123.40625,424.9895935058594,123.40625,414.15625,123.40625,404.8359375,123.40625,395.515625,123.40625,387.7083435058594,123.40625,379.9010314941406,123.40625,372.09375,123.40625,364.2864685058594,123.40625,350.2161560058594,123.40625,336.1458435058594,123.40625,315.8125,123.40625,300.8984375,123.40625,285.984375,123.40625,276.4895935058594,123.40625,266.9947814941406,123.40625,257.5,123.40625,248.0052032470703,123.40625,230.98004150390625,123.40625,213.95486450195312,123.40625,189.39930725097656,123.40625,174.46788024902344,123.40625,159.5364532470703,123.40625,154.2291717529297,123.40625,148.921875,123.40625,143.6145782470703,123.40625,138.3072967529297,123.40625,130.2369842529297,123.40625,122.16666412353516,123.40625,111.33333587646484,197.8029556274414,105.91666412353516,272.1996612548828,100.5,420.9930725097656,100.5,495.3897705078125,97.58333587646484,569.7864990234375,94.66666412353516,569.7864990234375,88.83333587646484,569.7864990234375,87.16666412353516,569.7864990234375,85.5,569.7864990234375,88.0}, labelLocation={x=127.40625,y=263.5729064941406} } }">
             </property>
         </relation>
         <relation name="relation2" class="ptolemy.domains.modal.kernel.Transition">
-            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="(angle_pitch &gt; 423.81 &amp;&amp; angle_pitch &lt;= 467.97 &amp;&amp; rotationrate &lt;= 2.84) || (angle_pitch &gt; 423.81 &amp;&amp; angle_pitch &gt; 467.97)">
+            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="isWalking">
             </property>
             <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="activity = &quot;jog to walking&quot;">
             </property>
@@ -1325,11 +1360,11 @@
             </property>
             <property name="gamma" class="ptolemy.data.expr.Parameter" value="-2.6840551522727183">
             </property>
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;walking._location&quot;,x=1045.0,y=70.0}, tail={id=&quot;jogging._location&quot;,x=1080.0,y=460.0}, points={1035.8307495117188,88.0,1035.8307495117188,85.5,1035.8307495117188,88.41666412353516,1035.8307495117188,91.33333587646484,1035.8307495117188,99.66666412353516,933.0516357421875,103.83333587646484,830.2725830078125,108.0,624.7144165039062,108.0,521.9353332519531,112.16666412353516,419.15625,116.33333587646484,419.15625,124.66666412353516,419.15625,131.4973907470703,419.15625,138.328125,419.15625,143.65625,419.15625,148.984375,419.15625,154.3125,419.15625,159.640625,419.15625,174.58245849609375,419.15625,189.52430725097656,419.15625,214.07986450195312,419.15625,231.10504150390625,419.15625,248.1302032470703,419.15625,257.625,419.15625,267.1197814941406,419.15625,276.6145935058594,419.15625,286.109375,419.15625,301.0234375,419.15625,315.9375,419.15625,336.2708435058594,419.15625,350.3515625,419.15625,364.4322814941406,419.15625,372.2604064941406,419.15625,380.0885314941406,419.15625,387.9166564941406,419.15625,395.7447814941406,419.15625,402.5755310058594,419.15625,409.40625,419.15625,415.2395935058594,527.1310729980469,418.15625,635.1058959960938,421.0729064941406,851.0555419921875,421.0729064941406,959.0303955078125,425.2395935058594,1067.0051879882812,429.40625,1067.0051879882812,437.7395935058594,1067.0051879882812,440.65625,1067.0051879882812,443.5729064941406,1067.0051879882812,441.0729064941406}, labelLocation={x=423.15625,y=263.63543701171875} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;walking._location&quot;,x=590.0,y=70.0}, tail={id=&quot;jogging._location&quot;,x=530.0,y=465.0}, points={581.1198120117188,88.0,581.1198120117188,85.5,581.1198120117188,88.41666412353516,581.1198120117188,91.33333587646484,581.1198120117188,99.66666412353516,536.1258850097656,103.83333587646484,491.1319580078125,108.0,401.14410400390625,108.0,356.1501770019531,112.16666412353516,311.15625,116.33333587646484,311.15625,124.66666412353516,311.15625,131.4869842529297,311.15625,138.3072967529297,311.15625,143.6145782470703,311.15625,148.921875,311.15625,154.2291717529297,311.15625,159.5364532470703,311.15625,174.46788024902344,311.15625,189.39930725097656,311.15625,213.95486450195312,311.15625,230.98004150390625,311.15625,248.0052032470703,311.15625,257.5,311.15625,266.9947814941406,311.15625,276.4895935058594,311.15625,285.984375,311.15625,300.8984375,311.15625,315.8125,311.15625,336.1458435058594,311.15625,350.2161560058594,311.15625,364.2864685058594,311.15625,372.09375,311.15625,379.9010314941406,311.15625,387.7083435058594,311.15625,395.515625,311.15625,403.5859375,311.15625,411.65625,311.15625,419.9895935058594,345.7109375,424.15625,380.265625,428.3229064941406,449.375,428.3229064941406,483.9296875,432.4895935058594,518.484375,436.65625,518.484375,444.9895935058594,518.484375,447.90625,518.484375,450.8229064941406,518.484375,448.3229064941406}, labelLocation={x=315.15625,y=263.5729064941406} } }">
             </property>
         </relation>
         <relation name="relation5" class="ptolemy.domains.modal.kernel.Transition">
-            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="(angle_pitch &gt; 423.81 &amp;&amp; angle_pitch &lt;= 467.97 &amp;&amp; rotationrate &lt;= 2.84) || (angle_pitch &gt; 423.81 &amp;&amp; angle_pitch &gt; 467.97)">
+            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="isWalking">
             </property>
             <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="activity = &quot;fall to walking&quot;">
             </property>
@@ -1337,11 +1372,11 @@
             </property>
             <property name="gamma" class="ptolemy.data.expr.Parameter" value="-1.6278766957199438">
             </property>
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;walking._location&quot;,x=1045.0,y=70.0}, tail={id=&quot;fall._location&quot;,x=2025.0,y=335.0}, points={1069.8307495117188,88.0,1069.8307495117188,85.5,1069.8307495117188,87.16666412353516,1069.8307495117188,88.83333587646484,1069.8307495117188,94.66666412353516,1259.759521484375,97.58333587646484,1449.6883544921875,100.5,1829.5460205078125,100.5,2019.474853515625,105.91666412353516,2209.403564453125,111.33333587646484,2209.403564453125,122.16666412353516,2209.403564453125,130.2473907470703,2209.403564453125,138.328125,2209.403564453125,143.65625,2209.403564453125,148.984375,2209.403564453125,154.3125,2209.403564453125,159.640625,2209.403564453125,174.58245849609375,2209.403564453125,189.52430725097656,2209.403564453125,214.07986450195312,2209.403564453125,230.27169799804688,2209.403564453125,246.4635467529297,2209.403564453125,254.2916717529297,2209.403564453125,262.1197814941406,2209.403564453125,269.9479064941406,2209.403564453125,277.7760314941406,2209.403564453125,284.6067810058594,2209.403564453125,291.4375,2209.403564453125,297.2708435058594,2180.05517578125,300.1875,2150.70654296875,303.1041564941406,2092.009521484375,303.1041564941406,2062.6610107421875,306.0208435058594,2033.3125,308.9375,2033.3125,314.7708435058594,2033.3125,316.4375,2033.3125,318.1041564941406,2033.3125,315.6041564941406}, labelLocation={x=2213.403564453125,y=133.0} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;walking._location&quot;,x=590.0,y=70.0}, tail={id=&quot;fall._location&quot;,x=910.0,y=335.0}, points={615.1198120117188,88.0,615.1198120117188,85.5,615.1198120117188,87.16666412353516,615.1198120117188,88.83333587646484,615.1198120117188,94.66666412353516,679.5556030273438,97.58333587646484,743.9913330078125,100.5,872.8628540039062,100.5,937.2986450195312,105.91666412353516,1001.734375,111.33333587646484,1001.734375,122.16666412353516,1001.734375,130.2369842529297,1001.734375,138.3072967529297,1001.734375,143.6145782470703,1001.734375,148.921875,1001.734375,154.2291717529297,1001.734375,159.5364532470703,1001.734375,174.46788024902344,1001.734375,189.39930725097656,1001.734375,213.95486450195312,1001.734375,230.14669799804688,1001.734375,246.3385467529297,1001.734375,254.1666717529297,1001.734375,261.9947814941406,1001.734375,269.8229064941406,1001.734375,277.6510314941406,1001.734375,284.4817810058594,1001.734375,291.3125,1001.734375,297.1458435058594,987.7994995117188,300.0625,973.8645629882812,302.9791564941406,945.9948120117188,302.9791564941406,932.0598754882812,305.8958435058594,918.125,308.8125,918.125,314.6458435058594,918.125,316.3125,918.125,317.9791564941406,918.125,315.4791564941406}, labelLocation={x=1005.734375,y=133.0} } }">
             </property>
         </relation>
         <relation name="relation7" class="ptolemy.domains.modal.kernel.Transition">
-            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="angle_pitch &lt;= 423.81 &amp;&amp; angle_pitch &lt;= 165.60">
+            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="isJogging">
             </property>
             <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="activity = &quot;fall to jogg&quot;">
             </property>
@@ -1349,11 +1384,11 @@
             </property>
             <property name="gamma" class="ptolemy.data.expr.Parameter" value="-0.03318878600630095">
             </property>
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;jogging._location&quot;,x=1080.0,y=460.0}, tail={id=&quot;fall._location&quot;,x=2025.0,y=335.0}, points={1100.0051879882812,441.0729064941406,1100.0051879882812,443.5729064941406,1100.0051879882812,441.90625,1100.0051879882812,440.2395935058594,1100.0051879882812,434.40625,1254.556396484375,431.4895935058594,1409.107666015625,428.5729064941406,1718.2100830078125,428.5729064941406,1872.76123046875,424.40625,2027.3125,420.2395935058594,2027.3125,411.90625,2027.3125,403.8255310058594,2027.3125,395.7447814941406,2027.3125,387.9166564941406,2027.3125,380.0885314941406,2027.3125,372.2604064941406,2027.3125,364.4322814941406,2027.3125,359.2682189941406,2027.3125,354.1041564941406,2027.3125,351.6041564941406}, labelLocation={x=2031.3125,y=381.6041564941406} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;jogging._location&quot;,x=530.0,y=465.0}, tail={id=&quot;fall._location&quot;,x=910.0,y=335.0}, points={551.484375,448.3229064941406,551.484375,450.8229064941406,551.484375,447.90625,551.484375,444.9895935058594,551.484375,436.65625,611.5911560058594,432.4895935058594,671.6979370117188,428.3229064941406,791.9114379882812,428.3229064941406,852.0182495117188,424.15625,912.125,419.9895935058594,912.125,411.65625,912.125,403.5859375,912.125,395.515625,912.125,387.7083435058594,912.125,379.9010314941406,912.125,372.09375,912.125,364.2864685058594,912.125,359.1328125,912.125,353.9791564941406,912.125,351.4791564941406}, labelLocation={x=916.125,y=381.4791564941406} } }">
             </property>
         </relation>
         <relation name="relation6" class="ptolemy.domains.modal.kernel.Transition">
-            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="angle_pitch &lt;= 423.81 &amp;&amp; angle_pitch &gt; 165.60 || angle_pitch &gt; 423.81 &amp;&amp; angle_pitch &lt;= 467.97 &amp;&amp; rotationrate &gt; 2.84">
+            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="isFall">
             </property>
             <property name="setActions" class="ptolemy.domains.modal.kernel.CommitActionsAttribute" value="fallDetectTimer = 1">
             </property>
@@ -1361,7 +1396,7 @@
             </property>
             <property name="gamma" class="ptolemy.data.expr.Parameter" value="3.141592653589793">
             </property>
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;prefall._location&quot;,x=1365.0,y=210.0}, tail={id=&quot;walking._location&quot;,x=1045.0,y=70.0}, points={1354.609375,189.96875,1354.609375,189.96875,1354.609375,187.0520782470703,1354.609375,184.1354217529297,1354.609375,178.3020782470703,1282.00732421875,175.3854217529297,1209.4053955078125,172.46875,1064.201416015625,172.46875,991.599365234375,169.5520782470703,918.9973754882812,166.6354217529297,918.9973754882812,160.8020782470703,918.9973754882812,156.0546875,918.9973754882812,151.3072967529297,918.9973754882812,147.6458282470703,918.9973754882812,143.984375,918.9973754882812,140.3229217529297,918.9973754882812,136.6614532470703,918.9973754882812,131.9140625,918.9973754882812,127.16666412353516,918.9973754882812,121.33333587646484,940.3585205078125,118.41666412353516,961.7196044921875,115.5,1004.4418334960938,115.5,1025.802978515625,110.08333587646484,1047.1640625,104.66666412353516,1047.1640625,93.83333587646484,1047.1640625,89.66666412353516,1047.1640625,85.5,1047.1640625,88.0}, labelLocation={x=922.9973754882812,y=133.9921875} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;prefall._location&quot;,x=660.0,y=210.0}, tail={id=&quot;walking._location&quot;,x=590.0,y=70.0}, points={651.3229370117188,189.84375,651.3229370117188,189.84375,651.3229370117188,186.9270782470703,651.3229370117188,184.0104217529297,651.3229370117188,178.1770782470703,635.7117919921875,175.2604217529297,620.1007080078125,172.34375,588.8784790039062,172.34375,573.2673950195312,169.4270782470703,557.6562805175781,166.5104217529297,557.6562805175781,160.6770782470703,557.6562805175781,155.9401092529297,557.6562805175781,151.203125,557.6562805175781,147.5625,557.6562805175781,143.921875,557.6562805175781,140.28125,557.6562805175781,136.640625,557.6562805175781,131.9036407470703,557.6562805175781,127.16666412353516,557.6562805175781,121.33333587646484,563.4557495117188,118.41666412353516,569.2552490234375,115.5,580.8541870117188,115.5,586.6536865234375,110.08333587646484,592.4531555175781,104.66666412353516,592.4531555175781,93.83333587646484,592.4531555175781,89.66666412353516,592.4531555175781,85.5,592.4531555175781,88.0}, labelLocation={x=561.6562805175781,y=133.9921875} } }">
             </property>
         </relation>
         <relation name="relation8" class="ptolemy.domains.modal.kernel.Transition">
@@ -1373,11 +1408,11 @@
             </property>
             <property name="gamma" class="ptolemy.data.expr.Parameter" value="1.094364606586371">
             </property>
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;fall._location&quot;,x=2025.0,y=335.0}, tail={id=&quot;prefall._location&quot;,x=1365.0,y=210.0}, points={2021.3125,315.6041564941406,2021.3125,318.1041564941406,2021.3125,316.4375,2021.3125,314.7708435058594,2021.3125,308.9375,2001.28125,306.0208435058594,1981.25,303.1041564941406,1941.1875,303.1041564941406,1921.15625,300.1875,1901.125,297.2708435058594,1901.125,291.4375,1901.125,286.6900939941406,1901.125,281.9427185058594,1901.125,278.28125,1901.125,274.6197814941406,1901.125,270.9583435058594,1901.125,267.296875,1901.125,262.5494689941406,1901.125,257.8020935058594,1901.125,251.96875,1813.927978515625,249.0520782470703,1726.73095703125,246.1354217529297,1552.3367919921875,246.1354217529297,1465.1397705078125,243.21875,1377.9427490234375,240.3020782470703,1377.9427490234375,234.46875,1377.9427490234375,231.5520782470703,1377.9427490234375,228.6354217529297,1377.9427490234375,228.6354217529297}, labelLocation={x=1905.125,y=263.6354064941406} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;fall._location&quot;,x=910.0,y=335.0}, tail={id=&quot;prefall._location&quot;,x=660.0,y=210.0}, points={906.125,315.4791564941406,906.125,317.9791564941406,906.125,316.3125,906.125,314.6458435058594,906.125,308.8125,879.9973754882812,305.8958435058594,853.8698120117188,302.9791564941406,801.6145629882812,302.9791564941406,775.4869995117188,300.0625,749.359375,297.1458435058594,749.359375,291.3125,749.359375,286.5650939941406,749.359375,281.8177185058594,749.359375,278.15625,749.359375,274.4947814941406,749.359375,270.8333435058594,749.359375,267.171875,749.359375,262.4244689941406,749.359375,257.6770935058594,749.359375,251.84375,736.9088745117188,248.9270782470703,724.4583129882812,246.0104217529297,699.5573120117188,246.0104217529297,687.1067504882812,243.09375,674.65625,240.1770782470703,674.65625,234.34375,674.65625,231.4270782470703,674.65625,228.5104217529297,674.65625,228.5104217529297}, labelLocation={x=753.359375,y=263.5104064941406} } }">
             </property>
         </relation>
         <relation name="relation9" class="ptolemy.domains.modal.kernel.Transition">
-            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="angle_pitch &lt;= 423.81 &amp;&amp; angle_pitch &gt; 165.60 || angle_pitch &gt; 423.81 &amp;&amp; angle_pitch &lt;= 467.97 &amp;&amp; rotationrate &gt; 2.84">
+            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="isFall">
             </property>
             <property name="setActions" class="ptolemy.domains.modal.kernel.CommitActionsAttribute" value="fallDetectTimer = fallDetectTimer + 1">
             </property>
@@ -1389,11 +1424,11 @@
             </property>
             <property name="error" class="ptolemy.data.expr.Parameter" value="false">
             </property>
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;prefall._location&quot;,x=1365.0,y=210.0}, tail={id=&quot;prefall._location&quot;,x=1365.0,y=210.0}, points={1320.9427490234375,204.96875,1318.7760009765625,207.1354217529297,1318.7760009765625,209.3020782470703,1318.7760009765625,211.46875,1320.9427490234375,213.6354217529297}, labelLocation={x=708.0104370117188,y=199.3098907470703} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;prefall._location&quot;,x=660.0,y=210.0}, tail={id=&quot;prefall._location&quot;,x=660.0,y=210.0}, points={617.65625,204.84375,615.4895935058594,207.0104217529297,615.4895935058594,209.1770782470703,615.4895935058594,211.34375,617.65625,213.5104217529297}, labelLocation={x=421.0833435058594,y=199.2473907470703} } }">
             </property>
         </relation>
         <relation name="relation3" class="ptolemy.domains.modal.kernel.Transition">
-            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="angle_pitch &lt;= 423.81 &amp;&amp; angle_pitch &gt; 165.60 || angle_pitch &gt; 423.81 &amp;&amp; angle_pitch &lt;= 467.97 &amp;&amp; rotationrate &gt; 2.84">
+            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="isFall">
             </property>
             <property name="setActions" class="ptolemy.domains.modal.kernel.CommitActionsAttribute" value="fallDetectTimer = 1">
             </property>
@@ -1401,11 +1436,11 @@
             </property>
             <property name="gamma" class="ptolemy.data.expr.Parameter" value="-2.8925700523103335">
             </property>
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;prefall._location&quot;,x=1365.0,y=210.0}, tail={id=&quot;jogging._location&quot;,x=1080.0,y=460.0}, points={1363.9427490234375,228.6354217529297,1363.9427490234375,228.6354217529297,1363.9427490234375,231.5520782470703,1363.9427490234375,234.46875,1363.9427490234375,240.3020782470703,1364.376708984375,243.21875,1364.810791015625,246.1354217529297,1365.6788330078125,246.1354217529297,1366.11279296875,249.0520782470703,1366.546875,251.96875,1366.546875,257.8020935058594,1366.546875,263.3828125,1366.546875,268.9635314941406,1366.546875,274.2916564941406,1366.546875,279.6197814941406,1366.546875,284.9479064941406,1366.546875,290.2760314941406,1366.546875,303.1067810058594,1366.546875,315.9375,1366.546875,336.2708435058594,1366.546875,350.3515625,1366.546875,364.4322814941406,1366.546875,372.2604064941406,1366.546875,380.0885314941406,1366.546875,387.9166564941406,1366.546875,395.7447814941406,1366.546875,402.5755310058594,1366.546875,409.40625,1366.546875,415.2395935058594,1320.2899169921875,418.15625,1274.032958984375,421.0729064941406,1181.51904296875,421.0729064941406,1135.2621459960938,425.2395935058594,1089.0051879882812,429.40625,1089.0051879882812,437.7395935058594,1089.0051879882812,440.65625,1089.0051879882812,443.5729064941406,1089.0051879882812,441.0729064941406}, labelLocation={x=1370.546875,y=323.6119689941406} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;prefall._location&quot;,x=660.0,y=210.0}, tail={id=&quot;jogging._location&quot;,x=530.0,y=465.0}, points={660.65625,228.5104217529297,660.65625,233.5104217529297,660.65625,240.7578125,660.65625,248.0052032470703,660.65625,257.5,660.65625,266.9947814941406,660.65625,276.4895935058594,660.65625,285.984375,660.65625,300.8984375,660.65625,315.8125,660.65625,336.1458435058594,660.65625,350.2161560058594,660.65625,364.2864685058594,660.65625,372.09375,660.65625,379.9010314941406,660.65625,387.7083435058594,660.65625,395.515625,660.65625,402.3359375,660.65625,409.15625,660.65625,414.9895935058594,640.6276245117188,417.90625,620.5989685058594,420.8229064941406,580.5416564941406,420.8229064941406,560.5130310058594,426.2395935058594,540.484375,431.65625,540.484375,442.4895935058594,540.484375,446.65625,540.484375,450.8229064941406,540.484375,448.3229064941406}, labelLocation={x=664.65625,y=323.5494689941406} } }">
             </property>
         </relation>
         <relation name="relation4" class="ptolemy.domains.modal.kernel.Transition">
-            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="(angle_pitch &gt; 423.81 &amp;&amp; angle_pitch &lt;= 467.97 &amp;&amp; rotationrate &lt;= 2.84) || (angle_pitch &gt; 423.81 &amp;&amp; angle_pitch &gt; 467.97)">
+            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="isWalking">
             </property>
             <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="activity = &quot;pre to walk&quot;">
             </property>
@@ -1413,11 +1448,11 @@
             </property>
             <property name="gamma" class="ptolemy.data.expr.Parameter" value="-1.0087243764912097">
             </property>
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;walking._location&quot;,x=1045.0,y=70.0}, tail={id=&quot;prefall._location&quot;,x=1365.0,y=210.0}, points={1058.4973754882812,88.0,1058.4973754882812,85.5,1058.4973754882812,88.41666412353516,1058.4973754882812,91.33333587646484,1058.4973754882812,99.66666412353516,1141.7083129882812,103.83333587646484,1224.9193115234375,108.0,1391.3411865234375,108.0,1474.5521240234375,112.16666412353516,1557.7630615234375,116.33333587646484,1557.7630615234375,124.66666412353516,1557.7630615234375,130.6640625,1557.7630615234375,136.6614532470703,1557.7630615234375,140.3229217529297,1557.7630615234375,143.984375,1557.7630615234375,147.6458282470703,1557.7630615234375,151.3072967529297,1557.7630615234375,156.0546875,1557.7630615234375,160.8020782470703,1557.7630615234375,166.6354217529297,1527.01513671875,169.5520782470703,1496.267333984375,172.46875,1434.771728515625,172.46875,1404.02392578125,175.3854217529297,1373.2760009765625,178.3020782470703,1373.2760009765625,184.1354217529297,1373.2760009765625,187.0520782470703,1373.2760009765625,189.96875,1373.2760009765625,189.96875}, labelLocation={x=1561.7630615234375,y=133.0} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;walking._location&quot;,x=590.0,y=70.0}, tail={id=&quot;prefall._location&quot;,x=660.0,y=210.0}, points={603.7864990234375,88.0,603.7864990234375,85.5,603.7864990234375,88.41666412353516,603.7864990234375,91.33333587646484,603.7864990234375,99.66666412353516,618.8324890136719,103.83333587646484,633.8784790039062,108.0,663.970458984375,108.0,679.0164794921875,112.16666412353516,694.0625,116.33333587646484,694.0624389648438,124.66666412353516,694.0624389648438,130.6536407470703,694.0624389648438,136.640625,694.0625,140.28125,694.0625,143.921875,694.0625,147.5625,694.0625,151.203125,694.0625,155.9401092529297,694.0624389648438,160.6770782470703,694.0625,166.5104217529297,690.05029296875,169.4270782470703,686.0381469726562,172.34375,678.0138549804688,172.34375,674.001708984375,175.2604217529297,669.9895629882812,178.1770782470703,669.9895629882812,184.0104217529297,669.9895629882812,186.9270782470703,669.9895629882812,189.84375,669.9895629882812,189.84375}, labelLocation={x=698.0625,y=133.0} } }">
             </property>
         </relation>
         <relation name="relation10" class="ptolemy.domains.modal.kernel.Transition">
-            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="angle_pitch &lt;= 423.81 &amp;&amp; angle_pitch &lt;= 165.60">
+            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="isJogging">
             </property>
             <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="activity = &quot;pre to jogg&quot;">
             </property>
@@ -1425,7 +1460,7 @@
             </property>
             <property name="gamma" class="ptolemy.data.expr.Parameter" value="0.2005103663176556">
             </property>
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;jogging._location&quot;,x=1080.0,y=460.0}, tail={id=&quot;prefall._location&quot;,x=1365.0,y=210.0}, points={1078.0051879882812,441.0729064941406,1078.0051879882812,443.5729064941406,1078.0051879882812,440.65625,1078.0051879882812,437.7395935058594,1078.0051879882812,429.40625,1076.8038330078125,425.2395935058594,1075.6024169921875,421.0729064941406,1073.1996459960938,421.0729064941406,1071.998291015625,418.15625,1070.796875,415.2395935058594,1070.796875,409.40625,1070.796875,402.5755310058594,1070.796875,395.7447814941406,1070.796875,387.9166564941406,1070.796875,380.0885314941406,1070.796875,372.2604064941406,1070.796875,364.4322814941406,1070.796875,350.3515625,1070.796875,336.2708435058594,1070.796875,315.9375,1070.796875,303.1067810058594,1070.796875,290.2760314941406,1070.796875,284.9479064941406,1070.796875,279.6197814941406,1070.796875,274.2916564941406,1070.796875,268.9635314941406,1070.796875,263.3828125,1070.796875,257.8020935058594,1070.796875,251.96875,1117.3211669921875,249.0520782470703,1163.845458984375,246.1354217529297,1256.89404296875,246.1354217529297,1303.41845703125,243.21875,1349.9427490234375,240.3020782470703,1349.9427490234375,234.46875,1349.9427490234375,231.5520782470703,1349.9427490234375,228.6354217529297,1349.9427490234375,228.6354217529297}, labelLocation={x=1074.796875,y=263.6354064941406} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;jogging._location&quot;,x=530.0,y=465.0}, tail={id=&quot;prefall._location&quot;,x=660.0,y=210.0}, points={529.484375,448.3229064941406,529.484375,450.8229064941406,529.484375,446.65625,529.484375,442.4895935058594,529.484375,431.65625,523.3880310058594,426.2395935058594,517.2916564941406,420.8229064941406,505.0989685058594,420.8229064941406,499.0025939941406,417.90625,492.90625,414.9895935058594,492.90625,409.15625,492.90625,402.3359375,492.90625,395.515625,492.90625,387.7083435058594,492.90625,379.9010314941406,492.90625,372.09375,492.90625,364.2864685058594,492.90625,350.2161560058594,492.90625,336.1458435058594,492.90625,315.8125,492.90625,302.9817810058594,492.90625,290.1510314941406,492.90625,284.8229064941406,492.90625,279.4947814941406,492.90625,274.1666564941406,492.90625,268.8385314941406,492.90625,263.2578125,492.90625,257.6770935058594,492.90625,251.84375,518.53125,248.9270782470703,544.15625,246.0104217529297,595.40625,246.0104217529297,621.03125,243.09375,646.65625,240.1770782470703,646.65625,234.34375,646.65625,231.4270782470703,646.65625,228.5104217529297,646.65625,228.5104217529297}, labelLocation={x=496.90625,y=263.5729064941406} } }">
             </property>
         </relation>
         <link port="walking.incomingPort" relation="relation2"/>
@@ -1450,7 +1485,7 @@
         <link port="prefall.outgoingPort" relation="relation10"/>
     </entity>
     <entity name="label" class="ptolemy.actor.lib.RecordDisassembler">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{445.0, 195.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{445.0, 185.0}">
         </property>
         <port name="label" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -1463,11 +1498,11 @@
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[352, 186]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{575.0, 215.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{575.0, 205.0}">
         </property>
     </entity>
-    <entity name="CompositeActor" class="ptolemy.actor.TypedCompositeActor">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{1020.0, 255.0}">
+    <entity name="GuardsCalculator" class="ptolemy.actor.TypedCompositeActor">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{1020.0, 245.0}">
         </property>
         <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={185, 332, 939, 656}, maximized=false}">
         </property>
@@ -1510,7 +1545,9 @@
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{605.0, 240.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{605.0, 220.0}">
+            </property>
+            <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
             </property>
         </port>
         <port name="isJogging" class="ptolemy.actor.TypedIOPort">
@@ -1519,7 +1556,9 @@
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{605.0, 300.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{605.0, 275.0}">
+            </property>
+            <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
             </property>
         </port>
         <port name="isFall" class="ptolemy.actor.TypedIOPort">
@@ -1528,7 +1567,9 @@
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{605.0, 355.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{605.0, 330.0}">
+            </property>
+            <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
             </property>
         </port>
         <entity name="isWalking" class="ptolemy.actor.lib.Expression">
@@ -1546,7 +1587,7 @@
             </property>
             <port name="output" class="ptolemy.actor.TypedIOPort">
                 <property name="output"/>
-                <property name="_type" class="ptolemy.actor.TypeAttribute" value="[boolean]">
+                <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
                 </property>
             </port>
             <port name="angle_pitch" class="ptolemy.actor.TypedIOPort">
@@ -1582,11 +1623,11 @@
                 <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                 </property>
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{370.0, 300.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{365.0, 300.0}">
             </property>
             <port name="output" class="ptolemy.actor.TypedIOPort">
                 <property name="output"/>
-                <property name="_type" class="ptolemy.actor.TypeAttribute" value="[boolean]">
+                <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
                 </property>
             </port>
             <port name="angle_pitch" class="ptolemy.actor.TypedIOPort">
@@ -1616,11 +1657,11 @@
                 <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                 </property>
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{385.0, 355.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{385.0, 350.0}">
             </property>
             <port name="output" class="ptolemy.actor.TypedIOPort">
                 <property name="output"/>
-                <property name="_type" class="ptolemy.actor.TypeAttribute" value="[boolean]">
+                <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
                 </property>
             </port>
             <port name="angle_pitch" class="ptolemy.actor.TypedIOPort">
@@ -1642,13 +1683,13 @@
         <relation name="relation2" class="ptolemy.actor.TypedIORelation">
             <vertex name="vertex1" value="{115.0, 255.0}">
             </vertex>
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;acceleration._location&quot;,x=20.0,y=255.0}, tail={id=&quot;relation2.vertex1&quot;,x=115.0,y=255.0}, points={} },{ head={id=&quot;isFall.acceleration&quot;,x=385.0,y=355.0}, tail={id=&quot;relation2.vertex1&quot;,x=115.0,y=255.0}, points={115.0,355.0} },{ head={id=&quot;isWalking.acceleration&quot;,x=385.0,y=240.0}, tail={id=&quot;relation2.vertex1&quot;,x=115.0,y=255.0}, points={115.0,240.0} },{ head={id=&quot;isJogging.acceleration&quot;,x=370.0,y=300.0}, tail={id=&quot;relation2.vertex1&quot;,x=115.0,y=255.0}, points={115.0,300.0} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;acceleration._location&quot;,x=20.0,y=255.0}, tail={id=&quot;relation2.vertex1&quot;,x=115.0,y=255.0}, points={} },{ head={id=&quot;isWalking.acceleration&quot;,x=385.0,y=240.0}, tail={id=&quot;relation2.vertex1&quot;,x=115.0,y=255.0}, points={115.0,240.0} },{ head={id=&quot;isJogging.acceleration&quot;,x=365.0,y=300.0}, tail={id=&quot;relation2.vertex1&quot;,x=115.0,y=255.0}, points={115.0,300.0} },{ head={id=&quot;isFall.acceleration&quot;,x=385.0,y=350.0}, tail={id=&quot;relation2.vertex1&quot;,x=115.0,y=255.0}, points={115.0,350.0} } }">
             </property>
         </relation>
         <relation name="relation3" class="ptolemy.actor.TypedIORelation">
             <vertex name="vertex1" value="{130.0, 310.0}">
             </vertex>
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;rotationrate._location&quot;,x=25.0,y=310.0}, tail={id=&quot;relation3.vertex1&quot;,x=130.0,y=310.0}, points={} },{ head={id=&quot;isWalking.rotationrate&quot;,x=385.0,y=240.0}, tail={id=&quot;relation3.vertex1&quot;,x=130.0,y=310.0}, points={130.0,250.0} },{ head={id=&quot;isFall.rotationrate&quot;,x=385.0,y=355.0}, tail={id=&quot;relation3.vertex1&quot;,x=130.0,y=310.0}, points={130.0,365.0} },{ head={id=&quot;isJogging.rotationrate&quot;,x=370.0,y=300.0}, tail={id=&quot;relation3.vertex1&quot;,x=130.0,y=310.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;rotationrate._location&quot;,x=25.0,y=310.0}, tail={id=&quot;relation3.vertex1&quot;,x=130.0,y=310.0}, points={} },{ head={id=&quot;isWalking.rotationrate&quot;,x=385.0,y=240.0}, tail={id=&quot;relation3.vertex1&quot;,x=130.0,y=310.0}, points={130.0,250.0} },{ head={id=&quot;isJogging.rotationrate&quot;,x=365.0,y=300.0}, tail={id=&quot;relation3.vertex1&quot;,x=130.0,y=310.0}, points={} },{ head={id=&quot;isFall.rotationrate&quot;,x=385.0,y=350.0}, tail={id=&quot;relation3.vertex1&quot;,x=130.0,y=310.0}, points={130.0,360.0} } }">
             </property>
         </relation>
         <relation name="relation4" class="ptolemy.actor.TypedIORelation">
@@ -1656,19 +1697,19 @@
             </property>
             <vertex name="vertex1" value="{145.0, 200.0}">
             </vertex>
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;isWalking.angle_pitch&quot;,x=385.0,y=240.0}, tail={id=&quot;relation4.vertex1&quot;,x=145.0,y=200.0}, points={145.0,230.0} },{ head={id=&quot;isJogging.angle_pitch&quot;,x=370.0,y=300.0}, tail={id=&quot;relation4.vertex1&quot;,x=145.0,y=200.0}, points={145.0,290.0} },{ head={id=&quot;isFall.angle_pitch&quot;,x=385.0,y=355.0}, tail={id=&quot;relation4.vertex1&quot;,x=145.0,y=200.0}, points={145.0,345.0} },{ head={id=&quot;angle_pitch._location&quot;,x=25.0,y=200.0}, tail={id=&quot;relation4.vertex1&quot;,x=145.0,y=200.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;isWalking.angle_pitch&quot;,x=385.0,y=240.0}, tail={id=&quot;relation4.vertex1&quot;,x=145.0,y=200.0}, points={145.0,230.0} },{ head={id=&quot;isJogging.angle_pitch&quot;,x=365.0,y=300.0}, tail={id=&quot;relation4.vertex1&quot;,x=145.0,y=200.0}, points={145.0,290.0} },{ head={id=&quot;angle_pitch._location&quot;,x=25.0,y=200.0}, tail={id=&quot;relation4.vertex1&quot;,x=145.0,y=200.0}, points={} },{ head={id=&quot;isFall.angle_pitch&quot;,x=385.0,y=350.0}, tail={id=&quot;relation4.vertex1&quot;,x=145.0,y=200.0}, points={145.0,340.0} } }">
             </property>
         </relation>
         <relation name="relation" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;isWalking._location&quot;,x=605.0,y=240.0}, tail={id=&quot;isWalking.output&quot;,x=385.0,y=240.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;isWalking._location&quot;,x=605.0,y=220.0}, tail={id=&quot;isWalking.output&quot;,x=385.0,y=240.0}, points={} } }">
             </property>
         </relation>
         <relation name="relation5" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;isJogging._location&quot;,x=605.0,y=300.0}, tail={id=&quot;isJogging.output&quot;,x=370.0,y=300.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;isJogging._location&quot;,x=605.0,y=275.0}, tail={id=&quot;isJogging.output&quot;,x=365.0,y=300.0}, points={} } }">
             </property>
         </relation>
         <relation name="relation6" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;isFall._location&quot;,x=605.0,y=355.0}, tail={id=&quot;isFall.output&quot;,x=385.0,y=355.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;isFall._location&quot;,x=605.0,y=330.0}, tail={id=&quot;isFall.output&quot;,x=385.0,y=350.0}, points={} } }">
             </property>
         </relation>
         <link port="angle_pitch" relation="relation4"/>
@@ -1691,99 +1732,99 @@
         <link port="isFall.rotationrate" relation="relation3"/>
     </entity>
     <relation name="relation" class="ptolemy.actor.TypedIORelation">
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;CSVReader.endOfFile&quot;,x=225.0,y=225.0}, tail={id=&quot;Stop.input&quot;,x=360.0,y=255.0}, points={310.0,235.0,310.0,255.0} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;CSVReader.endOfFile&quot;,x=225.0,y=215.0}, tail={id=&quot;Stop.input&quot;,x=360.0,y=245.0}, points={310.0,225.0,310.0,245.0} } }">
         </property>
     </relation>
     <relation name="relation2" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{390.0, 215.0}">
+        <vertex name="vertex1" value="{390.0, 205.0}">
         </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyroscope.input&quot;,x=440.0,y=260.0}, tail={id=&quot;relation2.vertex1&quot;,x=390.0,y=215.0}, points={390.0,280.0} },{ head={id=&quot;CSVReader.output&quot;,x=225.0,y=225.0}, tail={id=&quot;relation2.vertex1&quot;,x=390.0,y=215.0}, points={} },{ head={id=&quot;accelerometer.input&quot;,x=420.0,y=120.0}, tail={id=&quot;relation2.vertex1&quot;,x=390.0,y=215.0}, points={390.0,140.0} },{ head={id=&quot;label.input&quot;,x=445.0,y=195.0}, tail={id=&quot;relation2.vertex1&quot;,x=390.0,y=215.0}, points={} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyroscope.input&quot;,x=440.0,y=250.0}, tail={id=&quot;relation2.vertex1&quot;,x=390.0,y=205.0}, points={390.0,270.0} },{ head={id=&quot;CSVReader.output&quot;,x=225.0,y=215.0}, tail={id=&quot;relation2.vertex1&quot;,x=390.0,y=205.0}, points={} },{ head={id=&quot;accelerometer.input&quot;,x=420.0,y=110.0}, tail={id=&quot;relation2.vertex1&quot;,x=390.0,y=205.0}, points={390.0,130.0} },{ head={id=&quot;label.input&quot;,x=445.0,y=185.0}, tail={id=&quot;relation2.vertex1&quot;,x=390.0,y=205.0}, points={} } }">
         </property>
     </relation>
     <relation name="relation4" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{665.0, 70.0}">
+        <vertex name="vertex1" value="{665.0, 60.0}">
         </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;accelerometer.accel_x_list&quot;,x=420.0,y=120.0}, tail={id=&quot;relation4.vertex1&quot;,x=665.0,y=70.0}, points={525.0,130.0,525.0,70.0} },{ head={id=&quot;AnglePitchComputer.acc_x&quot;,x=765.0,y=150.0}, tail={id=&quot;relation4.vertex1&quot;,x=665.0,y=70.0}, points={665.0,130.0} },{ head={id=&quot;AccelerationComputer.acc_x&quot;,x=760.0,y=80.0}, tail={id=&quot;relation4.vertex1&quot;,x=665.0,y=70.0}, points={} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;accelerometer.accel_x_list&quot;,x=420.0,y=110.0}, tail={id=&quot;relation4.vertex1&quot;,x=665.0,y=60.0}, points={525.0,120.0,525.0,60.0} },{ head={id=&quot;AnglePitchComputer.acc_x&quot;,x=765.0,y=140.0}, tail={id=&quot;relation4.vertex1&quot;,x=665.0,y=60.0}, points={665.0,120.0} },{ head={id=&quot;AccelerationComputer.acc_x&quot;,x=760.0,y=70.0}, tail={id=&quot;relation4.vertex1&quot;,x=665.0,y=60.0}, points={} } }">
         </property>
     </relation>
     <relation name="relation5" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{635.0, 140.0}">
+        <vertex name="vertex1" value="{635.0, 130.0}">
         </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;AnglePitchComputer.acc_y&quot;,x=765.0,y=150.0}, tail={id=&quot;relation5.vertex1&quot;,x=635.0,y=140.0}, points={} },{ head={id=&quot;accelerometer.accel_y_list&quot;,x=420.0,y=120.0}, tail={id=&quot;relation5.vertex1&quot;,x=635.0,y=140.0}, points={} },{ head={id=&quot;AccelerationComputer.acc_y&quot;,x=760.0,y=80.0}, tail={id=&quot;relation5.vertex1&quot;,x=635.0,y=140.0}, points={635.0,80.0} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;AnglePitchComputer.acc_y&quot;,x=765.0,y=140.0}, tail={id=&quot;relation5.vertex1&quot;,x=635.0,y=130.0}, points={} },{ head={id=&quot;accelerometer.accel_y_list&quot;,x=420.0,y=110.0}, tail={id=&quot;relation5.vertex1&quot;,x=635.0,y=130.0}, points={} },{ head={id=&quot;AccelerationComputer.acc_y&quot;,x=760.0,y=70.0}, tail={id=&quot;relation5.vertex1&quot;,x=635.0,y=130.0}, points={635.0,70.0} } }">
         </property>
     </relation>
     <relation name="relation6" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{580.0, 165.0}">
+        <vertex name="vertex1" value="{580.0, 155.0}">
         </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;accelerometer.accel_z_list&quot;,x=420.0,y=120.0}, tail={id=&quot;relation6.vertex1&quot;,x=580.0,y=165.0}, points={525.0,150.0,525.0,165.0} },{ head={id=&quot;AnglePitchComputer.acc_z&quot;,x=765.0,y=150.0}, tail={id=&quot;relation6.vertex1&quot;,x=580.0,y=165.0}, points={650.0,160.0,650.0,165.0} },{ head={id=&quot;AccelerationComputer.acc_z&quot;,x=760.0,y=80.0}, tail={id=&quot;relation6.vertex1&quot;,x=580.0,y=165.0}, points={650.0,90.0,650.0,165.0} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;accelerometer.accel_z_list&quot;,x=420.0,y=110.0}, tail={id=&quot;relation6.vertex1&quot;,x=580.0,y=155.0}, points={525.0,140.0,525.0,155.0} },{ head={id=&quot;AnglePitchComputer.acc_z&quot;,x=765.0,y=140.0}, tail={id=&quot;relation6.vertex1&quot;,x=580.0,y=155.0}, points={650.0,150.0,650.0,155.0} },{ head={id=&quot;AccelerationComputer.acc_z&quot;,x=760.0,y=70.0}, tail={id=&quot;relation6.vertex1&quot;,x=580.0,y=155.0}, points={650.0,80.0,650.0,155.0} } }">
         </property>
     </relation>
     <relation name="relation7" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{580.0, 255.0}">
+        <vertex name="vertex1" value="{580.0, 245.0}">
         </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;RotationComputer.gyro_x&quot;,x=765.0,y=265.0}, tail={id=&quot;relation7.vertex1&quot;,x=580.0,y=255.0}, points={} },{ head={id=&quot;gyroscope.gyro_x_list&quot;,x=440.0,y=260.0}, tail={id=&quot;relation7.vertex1&quot;,x=580.0,y=255.0}, points={525.0,270.0,525.0,255.0} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;RotationComputer.gyro_x&quot;,x=765.0,y=255.0}, tail={id=&quot;relation7.vertex1&quot;,x=580.0,y=245.0}, points={} },{ head={id=&quot;gyroscope.gyro_x_list&quot;,x=440.0,y=250.0}, tail={id=&quot;relation7.vertex1&quot;,x=580.0,y=245.0}, points={525.0,260.0,525.0,245.0} } }">
         </property>
     </relation>
     <relation name="relation8" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{665.0, 280.0}">
+        <vertex name="vertex1" value="{665.0, 270.0}">
         </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyroscope.gyro_y_list&quot;,x=440.0,y=260.0}, tail={id=&quot;relation8.vertex1&quot;,x=665.0,y=280.0}, points={} },{ head={id=&quot;RotationComputer.gyro_y&quot;,x=765.0,y=265.0}, tail={id=&quot;relation8.vertex1&quot;,x=665.0,y=280.0}, points={665.0,265.0} },{ head={id=&quot;AnglePitchComputer.gyro_y&quot;,x=765.0,y=150.0}, tail={id=&quot;relation8.vertex1&quot;,x=665.0,y=280.0}, points={665.0,170.0} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyroscope.gyro_y_list&quot;,x=440.0,y=250.0}, tail={id=&quot;relation8.vertex1&quot;,x=665.0,y=270.0}, points={} },{ head={id=&quot;RotationComputer.gyro_y&quot;,x=765.0,y=255.0}, tail={id=&quot;relation8.vertex1&quot;,x=665.0,y=270.0}, points={665.0,255.0} },{ head={id=&quot;AnglePitchComputer.gyro_y&quot;,x=765.0,y=140.0}, tail={id=&quot;relation8.vertex1&quot;,x=665.0,y=270.0}, points={665.0,160.0} } }">
         </property>
     </relation>
     <relation name="relation9" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{680.0, 310.0}">
+        <vertex name="vertex1" value="{680.0, 300.0}">
         </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyroscope.gyro_z_list&quot;,x=440.0,y=260.0}, tail={id=&quot;relation9.vertex1&quot;,x=680.0,y=310.0}, points={525.0,290.0,525.0,310.0} },{ head={id=&quot;RotationComputer.gyro_z&quot;,x=765.0,y=265.0}, tail={id=&quot;relation9.vertex1&quot;,x=680.0,y=310.0}, points={680.0,275.0} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyroscope.gyro_z_list&quot;,x=440.0,y=250.0}, tail={id=&quot;relation9.vertex1&quot;,x=680.0,y=300.0}, points={525.0,280.0,525.0,300.0} },{ head={id=&quot;RotationComputer.gyro_z&quot;,x=765.0,y=255.0}, tail={id=&quot;relation9.vertex1&quot;,x=680.0,y=300.0}, points={680.0,265.0} } }">
         </property>
     </relation>
     <relation name="relation10" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{905.0, 265.0}">
+        <vertex name="vertex1" value="{905.0, 255.0}">
         </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;RotationPlotter.input&quot;,x=970.0,y=320.0}, tail={id=&quot;relation10.vertex1&quot;,x=905.0,y=265.0}, points={905.0,320.0} },{ head={id=&quot;RotationComputer.rotation_rate&quot;,x=765.0,y=265.0}, tail={id=&quot;relation10.vertex1&quot;,x=905.0,y=265.0}, points={} },{ head={id=&quot;CompositeActor.rotationrate&quot;,x=1020.0,y=255.0}, tail={id=&quot;relation10.vertex1&quot;,x=905.0,y=265.0}, points={} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;RotationPlotter.input&quot;,x=970.0,y=310.0}, tail={id=&quot;relation10.vertex1&quot;,x=905.0,y=255.0}, points={905.0,310.0} },{ head={id=&quot;RotationComputer.rotation_rate&quot;,x=765.0,y=255.0}, tail={id=&quot;relation10.vertex1&quot;,x=905.0,y=255.0}, points={} },{ head={id=&quot;GuardsCalculator.rotationrate&quot;,x=1020.0,y=245.0}, tail={id=&quot;relation10.vertex1&quot;,x=905.0,y=255.0}, points={} } }">
         </property>
     </relation>
     <relation name="relation12" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{905.0, 150.0}">
+        <vertex name="vertex1" value="{905.0, 140.0}">
         </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;AnglePitchPlotter.input&quot;,x=970.0,y=150.0}, tail={id=&quot;relation12.vertex1&quot;,x=905.0,y=150.0}, points={} },{ head={id=&quot;AnglePitchComputer.angle_pitch&quot;,x=765.0,y=150.0}, tail={id=&quot;relation12.vertex1&quot;,x=905.0,y=150.0}, points={} },{ head={id=&quot;ActivityDetectionFSM2.isWalking&quot;,x=1020.0,y=265.0}, tail={id=&quot;relation12.vertex1&quot;,x=905.0,y=195.0}, points={920.0,255.0} },{ head={id=&quot;CompositeActor.acceleration&quot;,x=1020.0,y=255.0}, tail={id=&quot;relation12.vertex1&quot;,x=905.0,y=150.0}, points={905.0,255.0} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;AnglePitchPlotter.input&quot;,x=970.0,y=140.0}, tail={id=&quot;relation12.vertex1&quot;,x=905.0,y=140.0}, points={} },{ head={id=&quot;AnglePitchComputer.angle_pitch&quot;,x=765.0,y=140.0}, tail={id=&quot;relation12.vertex1&quot;,x=905.0,y=140.0}, points={} },{ head={id=&quot;ActivityDetectionFSM.isWalking&quot;,x=1020.0,y=265.0}, tail={id=&quot;relation12.vertex1&quot;,x=905.0,y=195.0}, points={920.0,255.0} },{ head={id=&quot;GuardsCalculator.acceleration&quot;,x=1020.0,y=245.0}, tail={id=&quot;relation12.vertex1&quot;,x=905.0,y=140.0}, points={905.0,245.0} } }">
         </property>
     </relation>
     <relation name="relation13" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{1345.0, 255.0}">
+        <vertex name="vertex1" value="{1345.0, 245.0}">
         </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;LabelDisplay2.input&quot;,x=1395.0,y=255.0}, tail={id=&quot;relation13.vertex1&quot;,x=1345.0,y=255.0}, points={} },{ head={id=&quot;AlarmActor.activity&quot;,x=1405.0,y=315.0}, tail={id=&quot;relation13.vertex1&quot;,x=1345.0,y=255.0}, points={1345.0,315.0} },{ head={id=&quot;ActivityDetectionFSM2.activity&quot;,x=1205.0,y=255.0}, tail={id=&quot;relation13.vertex1&quot;,x=1345.0,y=255.0}, points={} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;LabelDisplay2.input&quot;,x=1395.0,y=245.0}, tail={id=&quot;relation13.vertex1&quot;,x=1345.0,y=245.0}, points={} },{ head={id=&quot;emergencyDelay.activity&quot;,x=1405.0,y=305.0}, tail={id=&quot;relation13.vertex1&quot;,x=1345.0,y=245.0}, points={1345.0,305.0} },{ head={id=&quot;ActivityDetectionFSM.activity&quot;,x=1205.0,y=245.0}, tail={id=&quot;relation13.vertex1&quot;,x=1345.0,y=245.0}, points={} } }">
         </property>
     </relation>
     <relation name="relation14" class="ptolemy.actor.TypedIORelation">
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;CSVReader.trigger&quot;,x=225.0,y=225.0}, tail={id=&quot;DiscreteClock.output&quot;,x=55.0,y=215.0}, points={} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;CSVReader.trigger&quot;,x=225.0,y=215.0}, tail={id=&quot;DiscreteClock.output&quot;,x=55.0,y=205.0}, points={} } }">
         </property>
     </relation>
     <relation name="relation3" class="ptolemy.actor.TypedIORelation">
         <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;.label.label&quot;,x=455.0,y=60.0}, tail={id=&quot;.LabelDisplay.input&quot;,x=580.0,y=80.0}, points={} } }">
         </property>
-        <vertex name="vertex" value="{125.0, -5.0}">
+        <vertex name="vertex" value="{125.0, -15.0}">
         </vertex>
     </relation>
     <relation name="relation15" class="ptolemy.actor.TypedIORelation">
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;label.label&quot;,x=445.0,y=195.0}, tail={id=&quot;LabelDisplay.input&quot;,x=575.0,y=215.0}, points={} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;label.label&quot;,x=445.0,y=185.0}, tail={id=&quot;LabelDisplay.input&quot;,x=575.0,y=205.0}, points={} } }">
         </property>
     </relation>
     <relation name="relation11" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{920.0, 80.0}">
+        <vertex name="vertex1" value="{920.0, 70.0}">
         </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;AccelerationComputer.acceleration&quot;,x=760.0,y=80.0}, tail={id=&quot;relation11.vertex1&quot;,x=920.0,y=80.0}, points={} },{ head={id=&quot;AccelerationPlotter.input&quot;,x=970.0,y=80.0}, tail={id=&quot;relation11.vertex1&quot;,x=920.0,y=80.0}, points={} },{ head={id=&quot;ActivityDetectionFSM2.isJogging&quot;,x=1020.0,y=265.0}, tail={id=&quot;relation11.vertex1&quot;,x=920.0,y=125.0}, points={905.0,265.0} },{ head={id=&quot;CompositeActor.angle_pitch&quot;,x=1020.0,y=255.0}, tail={id=&quot;relation11.vertex1&quot;,x=920.0,y=80.0}, points={920.0,245.0} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;AccelerationComputer.acceleration&quot;,x=760.0,y=70.0}, tail={id=&quot;relation11.vertex1&quot;,x=920.0,y=70.0}, points={} },{ head={id=&quot;AccelerationPlotter.input&quot;,x=970.0,y=70.0}, tail={id=&quot;relation11.vertex1&quot;,x=920.0,y=70.0}, points={} },{ head={id=&quot;ActivityDetectionFSM.isJogging&quot;,x=1020.0,y=265.0}, tail={id=&quot;relation11.vertex1&quot;,x=920.0,y=125.0}, points={905.0,265.0} },{ head={id=&quot;GuardsCalculator.angle_pitch&quot;,x=1020.0,y=245.0}, tail={id=&quot;relation11.vertex1&quot;,x=920.0,y=70.0}, points={920.0,235.0} } }">
         </property>
     </relation>
     <relation name="relation16" class="ptolemy.actor.TypedIORelation">
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;ActivityDetectionFSM2.isWalking&quot;,x=1205.0,y=255.0}, tail={id=&quot;CompositeActor.isWalking&quot;,x=1020.0,y=255.0}, points={} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;ActivityDetectionFSM.isWalking&quot;,x=1205.0,y=245.0}, tail={id=&quot;GuardsCalculator.isWalking&quot;,x=1020.0,y=245.0}, points={} } }">
         </property>
     </relation>
     <relation name="relation17" class="ptolemy.actor.TypedIORelation">
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;ActivityDetectionFSM2.isJogging&quot;,x=1205.0,y=255.0}, tail={id=&quot;CompositeActor.isJogging&quot;,x=1020.0,y=255.0}, points={} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;ActivityDetectionFSM.isJogging&quot;,x=1205.0,y=245.0}, tail={id=&quot;GuardsCalculator.isJogging&quot;,x=1020.0,y=245.0}, points={} } }">
         </property>
     </relation>
     <relation name="relation18" class="ptolemy.actor.TypedIORelation">
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;ActivityDetectionFSM2.isFall&quot;,x=1205.0,y=255.0}, tail={id=&quot;CompositeActor.isFall&quot;,x=1020.0,y=255.0}, points={} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;ActivityDetectionFSM.isFall&quot;,x=1205.0,y=245.0}, tail={id=&quot;GuardsCalculator.isFall&quot;,x=1020.0,y=245.0}, points={} } }">
         </property>
     </relation>
     <link port="CSVReader.output" relation="relation2"/>
@@ -1816,18 +1857,18 @@
     <link port="AnglePitchPlotter.input" relation="relation12"/>
     <link port="LabelDisplay2.input" relation="relation13"/>
     <link port="DiscreteClock.output" relation="relation14"/>
-    <link port="AlarmActor.activity" relation="relation13"/>
-    <link port="ActivityDetectionFSM2.isWalking" relation="relation16"/>
-    <link port="ActivityDetectionFSM2.isJogging" relation="relation17"/>
-    <link port="ActivityDetectionFSM2.activity" relation="relation13"/>
-    <link port="ActivityDetectionFSM2.isFall" relation="relation18"/>
+    <link port="emergencyDelay.activity" relation="relation13"/>
+    <link port="ActivityDetectionFSM.isWalking" relation="relation16"/>
+    <link port="ActivityDetectionFSM.isJogging" relation="relation17"/>
+    <link port="ActivityDetectionFSM.activity" relation="relation13"/>
+    <link port="ActivityDetectionFSM.isFall" relation="relation18"/>
     <link port="label.input" relation="relation2"/>
     <link port="label.label" relation="relation15"/>
     <link port="LabelDisplay.input" relation="relation15"/>
-    <link port="CompositeActor.angle_pitch" relation="relation11"/>
-    <link port="CompositeActor.acceleration" relation="relation12"/>
-    <link port="CompositeActor.rotationrate" relation="relation10"/>
-    <link port="CompositeActor.isWalking" relation="relation16"/>
-    <link port="CompositeActor.isJogging" relation="relation17"/>
-    <link port="CompositeActor.isFall" relation="relation18"/>
+    <link port="GuardsCalculator.angle_pitch" relation="relation11"/>
+    <link port="GuardsCalculator.acceleration" relation="relation12"/>
+    <link port="GuardsCalculator.rotationrate" relation="relation10"/>
+    <link port="GuardsCalculator.isWalking" relation="relation16"/>
+    <link port="GuardsCalculator.isJogging" relation="relation17"/>
+    <link port="GuardsCalculator.isFall" relation="relation18"/>
 </entity>
