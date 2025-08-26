@@ -20,20 +20,19 @@ def preprocess_df(df):
 	df['acceleration'] = df['acceleration'].rolling(window=WINDOW_SIZE).mean()
 	df['rotationrate'] = df['rotationrate'].rolling(window=WINDOW_SIZE).mean()
 
-	pitch = np.atan2(
+	df['pitch'] = np.atan2(
 		-df['accel_x_list'], np.sqrt(df['accel_y_list'] ** 2 + df['accel_z_list'] ** 2)
 	) * (180 / np.pi)
-	gyro_integration = df['gyro_y_list'] * (1 / 50)
 
-	# Calculate the recursive component using cumsum
-	# This handles: 0.98 * (previous_angle + gyro_term)
-	recursive_term = (0.98 * gyro_integration).cumsum()
+	df['gyro_integration'] = df['gyro_y_list'] * (1 / 50)
+	alpha = 0.98
+	angle_pitch = 0.0
+	angles = []
+	for gyro_angle_change, p in zip(df['gyro_integration'], df['pitch']):
+		angle_pitch = alpha * (angle_pitch + gyro_angle_change) + (1 - alpha) * p
+		angles.append(angle_pitch)
 
-	# Add the accelerometer correction term
-	accel_term = 0.02 * pitch
-
-	# Combine terms (note: first value needs special handling)
-	df['angle_pitch'] = recursive_term + accel_term.cumsum()
+	df['angle_pitch'] = angles
 
 	df = df.filter(
 		items=[
