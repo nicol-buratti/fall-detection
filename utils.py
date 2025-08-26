@@ -42,6 +42,7 @@ def preprocess_df(df):
 			'acceleration',
 			'rotationrate',
 			'angle_pitch',
+			'label',
 		]
 	)
 	return df
@@ -59,23 +60,25 @@ def get_fall_dataset(dataset):
 		df1 = pd.read_csv(acc)
 		df2 = pd.read_csv(gyro)
 		df = pd.concat([df1, df2], axis=1)
+
+		split = acc.stem.split('_')
+		filename = str(acc.parent.name + '/' + split[0] + '_' + split[1])
+		falls_df[falls_df['filename'] == filename]
+		_, start, end = falls_df[falls_df['filename'] == filename].iloc[0]
+
+		df['label'] = np.where(
+			(df['accel_time_list'] > start)
+			& (df['accel_time_list'] < end)
+			& (df['gyro_time_list'] > start)
+			& (df['gyro_time_list'] < end),
+			'fall',
+			'ADL',
+		)
+
 		df = preprocess_df(df).dropna()
 		df_list.append(df)
 	df = pd.concat(df_list)
 
-	split = acc.stem.split('_')
-	filename = str(acc.parent.name + '/' + split[0] + '_' + split[1])
-	falls_df[falls_df['filename'] == filename]
-	_, start, end = falls_df[falls_df['filename'] == filename].iloc[0]
-
-	df['label'] = np.where(
-		(df['accel_time_list'] > start)
-		& (df['accel_time_list'] < end)
-		& (df['gyro_time_list'] > start)
-		& (df['gyro_time_list'] < end),
-		'fall',
-		'ADL',
-	)
 	return df
 
 
