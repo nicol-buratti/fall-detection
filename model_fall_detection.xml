@@ -1,28 +1,18 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE entity PUBLIC "-//UC Berkeley//DTD MoML 1//EN"
     "http://ptolemy.eecs.berkeley.edu/xml/dtd/MoML_1.dtd">
-<entity name="model_fall_detection" class="ptolemy.actor.TypedCompositeActor">
+<entity name="model_fall_detection_with_prefall" class="ptolemy.actor.TypedCompositeActor">
     <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="11.0.1">
     </property>
-    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={20, 577, 1194, 764}, maximized=false}">
-    </property>
-    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[955, 618]">
-    </property>
-    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0475046112372306">
-    </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{791.2851562499998, 203.64973958333331}">
-    </property>
-    <property name="Annotation3" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+    <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
         <property name="textSize" class="ptolemy.data.expr.Parameter" value="14">
         </property>
         <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 0.0, 1.0}">
         </property>
         <property name="text" class="ptolemy.kernel.util.StringAttribute" value="https://www.cs.virginia.edu/~stankovic/psfiles/bsn09-1.pdf">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{375.0, -25.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{370.0, -30.0}">
         </property>
-    </property>
-    <property name="enableBackwardTypeInference" class="ptolemy.data.expr.Parameter" value="true">
     </property>
     <property name="signalFrequency" class="ptolemy.data.expr.Parameter" value="50">
         <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
@@ -40,7 +30,7 @@
         </property>
         <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{245.0, -15.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{240.0, -20.0}">
         </property>
     </property>
     <property name="window_size" class="ptolemy.data.expr.Parameter" value="20">
@@ -59,25 +49,35 @@
         </property>
         <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{130.0, -15.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{120.0, -20.0}">
         </property>
     </property>
     <property name="DE Director" class="ptolemy.domains.de.kernel.DEDirector">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{55.0, 5.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{45.0, 0.0}">
         </property>
     </property>
-    <entity name="CSVReader" class="ptolemy.actor.lib.io.CSVReader">
-        <property name="fileOrURL" class="ptolemy.actor.parameters.FilePortParameter" value="C:/Users/nicki/Desktop/fall-detection/raw_data2.csv">
+    <property name="enableBackwardTypeInference" class="ptolemy.data.expr.Parameter" value="true">
+    </property>
+    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={567, 260, 939, 656}, maximized=false}">
+    </property>
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 510]">
+    </property>
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.4291006988260992">
+    </property>
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{344.7166819852942, 173.81801470588238}">
+    </property>
+    <entity name="CSVSignalReader" class="ptolemy.actor.lib.io.CSVReader">
+        <property name="fileOrURL" class="ptolemy.actor.parameters.FilePortParameter" value="ADL_fall_raw_signal.csv">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{230.0, 220.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{225.0, 180.0}">
         </property>
     </entity>
     <entity name="Stop" class="ptolemy.actor.lib.Stop">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{370.0, 250.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{370.0, 215.0}">
         </property>
     </entity>
     <entity name="gyroscope" class="ptolemy.actor.lib.RecordDisassembler">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{445.0, 275.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{450.0, 245.0}">
         </property>
         <port name="gyro_x_list" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -101,25 +101,8 @@
             </property>
         </port>
     </entity>
-    <entity name="label" class="ptolemy.actor.lib.RecordDisassembler">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{455.0, 190.0}">
-        </property>
-        <port name="label" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-    </entity>
-    <entity name="LabelDisplay" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={50, 500, 374, 273}, maximized=false}">
-        </property>
-        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[352, 186]">
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{580.0, 210.0}">
-        </property>
-    </entity>
     <entity name="accelerometer" class="ptolemy.actor.lib.RecordDisassembler">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{430.0, 110.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{430.0, 150.0}">
         </property>
         <port name="accel_x_list" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -144,7 +127,7 @@
         </port>
     </entity>
     <entity name="RotationComputer" class="ptolemy.actor.TypedCompositeActor">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{775.0, 275.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{765.0, 260.0}">
         </property>
         <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={532, 562, 939, 656}, maximized=false}">
         </property>
@@ -152,13 +135,21 @@
         </property>
         <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0">
         </property>
-        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{347.0, 423.25}">
+        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{306.05422794117646, 93.3984375}">
+        </property>
+        <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+            <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 0.0, 1.0}">
+            </property>
+            <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Calculates the magnitude of the angular velocity vector,&#10;also known as the Gyroscope Vector Magnitude (GVM) or angular speed.&#10;This combines the rotational speeds from the three individual axes (X, Y, Z)&#10;into a single value that represents the total speed of rotation, regardless&#10;of the axis of rotation.">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{-5.0, -15.0}">
+            </property>
         </property>
         <port name="gyro_x" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{20.0, 205.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{15.0, 110.0}">
             </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
@@ -167,7 +158,7 @@
             <property name="input"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{20.0, 260.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{15.0, 165.0}">
             </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
@@ -176,7 +167,7 @@
             <property name="input"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{20.0, 315.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{15.0, 220.0}">
             </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
@@ -185,7 +176,7 @@
             <property name="output"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{330.0, 275.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{570.0, 180.0}">
             </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
@@ -201,7 +192,7 @@
                 <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                 </property>
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{110.0, 205.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{110.0, 110.0}">
             </property>
             <port name="in" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
@@ -218,7 +209,7 @@
                 <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                 </property>
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{110.0, 260.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{110.0, 165.0}">
             </property>
             <port name="in" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
@@ -235,48 +226,79 @@
                 <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                 </property>
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{110.0, 315.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{110.0, 220.0}">
             </property>
             <port name="in" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
             </port>
         </entity>
         <entity name="AddSubtract" class="ptolemy.actor.lib.AddSubtract">
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{235.0, 275.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{235.0, 180.0}">
             </property>
         </entity>
+        <entity name="MovingAverage" class="ptolemy.actor.lib.MovingAverage">
+            <property name="maxPastInputsToAverage" class="ptolemy.data.expr.Parameter" value="window_size">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{475.0, 180.0}">
+            </property>
+        </entity>
+        <entity name="Expression5" class="ptolemy.actor.lib.Expression">
+            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="sqrt(in)">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+                </property>
+                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                </property>
+                <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+                </property>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{360.0, 180.0}">
+            </property>
+            <port name="in" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+            </port>
+        </entity>
         <relation name="relation" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression.in&quot;,x=110.0,y=205.0}, tail={id=&quot;acc_x._location&quot;,x=20.0,y=205.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyro_x._location&quot;,x=15.0,y=110.0}, tail={id=&quot;Expression.in&quot;,x=110.0,y=110.0}, points={} } }">
             </property>
         </relation>
         <relation name="relation2" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression2.in&quot;,x=110.0,y=260.0}, tail={id=&quot;acc_y._location&quot;,x=20.0,y=260.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyro_y._location&quot;,x=15.0,y=165.0}, tail={id=&quot;Expression2.in&quot;,x=110.0,y=165.0}, points={} } }">
             </property>
         </relation>
         <relation name="relation3" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression3.in&quot;,x=110.0,y=315.0}, tail={id=&quot;acc_z._location&quot;,x=20.0,y=315.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyro_z._location&quot;,x=15.0,y=220.0}, tail={id=&quot;Expression3.in&quot;,x=110.0,y=220.0}, points={} } }">
             </property>
         </relation>
         <relation name="relation4" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;AddSubtract.plus&quot;,x=235.0,y=275.0,index=3}, tail={id=&quot;Expression.output&quot;,x=110.0,y=205.0}, points={175.0,255.0,175.0,205.0} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression.output&quot;,x=110.0,y=110.0}, tail={id=&quot;AddSubtract.plus&quot;,x=235.0,y=180.0,index=3}, points={175.0,110.0,175.0,160.0} } }">
             </property>
         </relation>
         <relation name="relation5" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;AddSubtract.plus&quot;,x=235.0,y=275.0,index=3}, tail={id=&quot;Expression2.output&quot;,x=110.0,y=260.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression2.output&quot;,x=110.0,y=165.0}, tail={id=&quot;AddSubtract.plus&quot;,x=235.0,y=180.0,index=3}, points={} } }">
             </property>
         </relation>
         <relation name="relation6" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;AddSubtract.plus&quot;,x=235.0,y=275.0,index=3}, tail={id=&quot;Expression3.output&quot;,x=110.0,y=315.0}, points={175.0,265.0,175.0,315.0} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression3.output&quot;,x=110.0,y=220.0}, tail={id=&quot;AddSubtract.plus&quot;,x=235.0,y=180.0,index=3}, points={175.0,220.0,175.0,170.0} } }">
+            </property>
+        </relation>
+        <relation name="relation8" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;MovingAverage.input&quot;,x=475.0,y=180.0}, tail={id=&quot;Expression5.output&quot;,x=360.0,y=180.0}, points={} } }">
+            </property>
+        </relation>
+        <relation name="relation9" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;rotation_rate._location&quot;,x=570.0,y=180.0}, tail={id=&quot;MovingAverage.output&quot;,x=475.0,y=180.0}, points={} } }">
             </property>
         </relation>
         <relation name="relation7" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;acceleration._location&quot;,x=330.0,y=275.0}, tail={id=&quot;AddSubtract.output&quot;,x=235.0,y=275.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;AddSubtract.output&quot;,x=235.0,y=180.0}, tail={id=&quot;Expression5.in&quot;,x=360.0,y=180.0}, points={} } }">
             </property>
         </relation>
         <link port="gyro_x" relation="relation"/>
         <link port="gyro_y" relation="relation2"/>
         <link port="gyro_z" relation="relation3"/>
-        <link port="rotation_rate" relation="relation7"/>
+        <link port="rotation_rate" relation="relation9"/>
         <link port="Expression.output" relation="relation4"/>
         <link port="Expression.in" relation="relation"/>
         <link port="Expression2.output" relation="relation5"/>
@@ -287,11 +309,15 @@
         <link port="AddSubtract.plus" relation="relation5"/>
         <link port="AddSubtract.plus" relation="relation6"/>
         <link port="AddSubtract.output" relation="relation7"/>
+        <link port="MovingAverage.input" relation="relation8"/>
+        <link port="MovingAverage.output" relation="relation9"/>
+        <link port="Expression5.output" relation="relation8"/>
+        <link port="Expression5.in" relation="relation7"/>
     </entity>
     <entity name="AccelerationComputer" class="ptolemy.actor.TypedCompositeActor">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{770.0, 75.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{755.0, 115.0}">
         </property>
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={532, 562, 939, 656}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={537, 432, 939, 656}, maximized=false}">
         </property>
         <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 510]">
         </property>
@@ -299,11 +325,19 @@
         </property>
         <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{347.0, 423.25}">
         </property>
+        <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+            <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 0.0, 1.0}">
+            </property>
+            <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Calculates the Signal Vector Magnitude (SVM) or Euclidean Norm.&#10;This combines the three individual accelerometer axes (X, Y, Z)&#10;into a single value representing the total magnitude of acceleration,&#10;independent of its direction.&#10;">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{-5.0, -15.0}">
+            </property>
+        </property>
         <port name="acc_x" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{20.0, 205.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{15.0, 95.0}">
             </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
@@ -312,7 +346,7 @@
             <property name="input"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{20.0, 260.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{15.0, 150.0}">
             </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
@@ -321,7 +355,7 @@
             <property name="input"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{20.0, 315.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{15.0, 205.0}">
             </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
@@ -330,7 +364,7 @@
             <property name="output"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{460.0, 275.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{570.0, 165.0}">
             </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
@@ -346,7 +380,7 @@
                 <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                 </property>
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{110.0, 205.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{105.0, 95.0}">
             </property>
             <port name="in" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
@@ -363,7 +397,7 @@
                 <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                 </property>
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{110.0, 260.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{105.0, 150.0}">
             </property>
             <port name="in" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
@@ -380,52 +414,73 @@
                 <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                 </property>
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{110.0, 315.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{105.0, 205.0}">
             </property>
             <port name="in" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
             </port>
         </entity>
         <entity name="AddSubtract" class="ptolemy.actor.lib.AddSubtract">
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{235.0, 275.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{230.0, 165.0}">
             </property>
         </entity>
         <entity name="MovingAverage" class="ptolemy.actor.lib.MovingAverage">
             <property name="maxPastInputsToAverage" class="ptolemy.data.expr.Parameter" value="window_size">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{365.0, 275.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{475.0, 165.0}">
             </property>
         </entity>
+        <entity name="Expression4" class="ptolemy.actor.lib.Expression">
+            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="sqrt(in)">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+                </property>
+                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                </property>
+                <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+                </property>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{355.0, 165.0}">
+            </property>
+            <port name="in" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+            </port>
+        </entity>
         <relation name="relation" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;acc_x._location&quot;,x=20.0,y=205.0}, tail={id=&quot;Expression.in&quot;,x=110.0,y=205.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;acc_x._location&quot;,x=15.0,y=95.0}, tail={id=&quot;Expression.in&quot;,x=105.0,y=95.0}, points={} } }">
             </property>
         </relation>
         <relation name="relation2" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;acc_y._location&quot;,x=20.0,y=260.0}, tail={id=&quot;Expression2.in&quot;,x=110.0,y=260.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;acc_y._location&quot;,x=15.0,y=150.0}, tail={id=&quot;Expression2.in&quot;,x=105.0,y=150.0}, points={} } }">
             </property>
         </relation>
         <relation name="relation3" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;acc_z._location&quot;,x=20.0,y=315.0}, tail={id=&quot;Expression3.in&quot;,x=110.0,y=315.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;acc_z._location&quot;,x=15.0,y=205.0}, tail={id=&quot;Expression3.in&quot;,x=105.0,y=205.0}, points={} } }">
             </property>
         </relation>
         <relation name="relation4" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression.output&quot;,x=110.0,y=205.0}, tail={id=&quot;AddSubtract.plus&quot;,x=235.0,y=275.0,index=3}, points={175.0,205.0,175.0,255.0} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression.output&quot;,x=105.0,y=95.0}, tail={id=&quot;AddSubtract.plus&quot;,x=230.0,y=165.0,index=3}, points={170.0,95.0,170.0,145.0} } }">
             </property>
         </relation>
         <relation name="relation5" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression2.output&quot;,x=110.0,y=260.0}, tail={id=&quot;AddSubtract.plus&quot;,x=235.0,y=275.0,index=3}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression2.output&quot;,x=105.0,y=150.0}, tail={id=&quot;AddSubtract.plus&quot;,x=230.0,y=165.0,index=3}, points={} } }">
             </property>
         </relation>
         <relation name="relation6" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression3.output&quot;,x=110.0,y=315.0}, tail={id=&quot;AddSubtract.plus&quot;,x=235.0,y=275.0,index=3}, points={175.0,315.0,175.0,265.0} } }">
-            </property>
-        </relation>
-        <relation name="relation8" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;MovingAverage.input&quot;,x=365.0,y=275.0}, tail={id=&quot;AddSubtract.output&quot;,x=235.0,y=275.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression3.output&quot;,x=105.0,y=205.0}, tail={id=&quot;AddSubtract.plus&quot;,x=230.0,y=165.0,index=3}, points={170.0,205.0,170.0,155.0} } }">
             </property>
         </relation>
         <relation name="relation7" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;acceleration._location&quot;,x=460.0,y=275.0}, tail={id=&quot;MovingAverage.output&quot;,x=365.0,y=275.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;acceleration._location&quot;,x=570.0,y=165.0}, tail={id=&quot;MovingAverage.output&quot;,x=475.0,y=165.0}, points={} } }">
+            </property>
+        </relation>
+        <relation name="relation9" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;AddSubtract.output&quot;,x=230.0,y=165.0}, tail={id=&quot;Expression4.in&quot;,x=355.0,y=165.0}, points={} } }">
+            </property>
+        </relation>
+        <relation name="relation8" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;MovingAverage.input&quot;,x=475.0,y=165.0}, tail={id=&quot;Expression4.output&quot;,x=355.0,y=165.0}, points={} } }">
             </property>
         </relation>
         <link port="acc_x" relation="relation"/>
@@ -441,48 +496,54 @@
         <link port="AddSubtract.plus" relation="relation4"/>
         <link port="AddSubtract.plus" relation="relation5"/>
         <link port="AddSubtract.plus" relation="relation6"/>
-        <link port="AddSubtract.output" relation="relation8"/>
+        <link port="AddSubtract.output" relation="relation9"/>
         <link port="MovingAverage.input" relation="relation8"/>
         <link port="MovingAverage.output" relation="relation7"/>
+        <link port="Expression4.output" relation="relation8"/>
+        <link port="Expression4.in" relation="relation9"/>
     </entity>
     <entity name="AccelerationPlotter" class="ptolemy.actor.lib.gui.TimedPlotter">
+        <property name="legend" class="ptolemy.kernel.util.StringAttribute" value="Acceleration">
+        </property>
         <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={539, 48, 522, 387}, maximized=false}">
         </property>
         <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[500, 300]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{980.0, 75.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{965.0, 115.0}">
         </property>
         <configure>
 <?plotml <!DOCTYPE plot PUBLIC "-//UC Berkeley//DTD PlotML 1//EN"
 "http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
 <plot>
 <title>TimedPlotter</title>
-<xRange min="0.0" max="415.0"/>
-<yRange min="62.37049999999999" max="575.322"/>
+<xRange min="0.0" max="387.0"/>
+<yRange min="7.482259797398084" max="17.512388584681588"/>
 </plot>?>
         </configure>
     </entity>
     <entity name="RotationPlotter" class="ptolemy.actor.lib.gui.TimedPlotter">
+        <property name="legend" class="ptolemy.kernel.util.StringAttribute" value="Rotation">
+        </property>
         <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={1084, 55, 522, 387}, maximized=false}">
         </property>
         <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[500, 300]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{980.0, 275.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{965.0, 315.0}">
         </property>
         <configure>
 <?plotml <!DOCTYPE plot PUBLIC "-//UC Berkeley//DTD PlotML 1//EN"
 "http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
 <plot>
 <title>TimedPlotter</title>
-<xRange min="0.0" max="415.0"/>
-<yRange min="0.0" max="35.330000000000005"/>
+<xRange min="0.0" max="387.0"/>
+<yRange min="0.015000000000000003" max="6.268405374778355"/>
 </plot>?>
         </configure>
     </entity>
     <entity name="AnglePitchComputer" class="ptolemy.actor.TypedCompositeActor">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{775.0, 140.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{760.0, 180.0}">
         </property>
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={527, 221, 939, 656}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={441, 455, 939, 656}, maximized=false}">
         </property>
         <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 510]">
         </property>
@@ -506,20 +567,20 @@
             </property>
             <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{120.0, -35.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{15.0, -45.0}">
             </property>
         </property>
         <property name="SDF Director" class="ptolemy.domains.sdf.kernel.SDFDirector">
             <property name="iterations" class="ptolemy.data.expr.Parameter" value="AUTO">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{45.0, -15.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{-60.0, -25.0}">
             </property>
         </property>
         <port name="acc_x" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{5.0, 40.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{-100.0, 30.0}">
             </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
@@ -528,7 +589,7 @@
             <property name="input"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{5.0, 95.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{-100.0, 85.0}">
             </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
@@ -537,7 +598,7 @@
             <property name="input"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{5.0, 150.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{-100.0, 140.0}">
             </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
@@ -548,7 +609,7 @@
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{145.0, 150.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{55.0, 60.0}">
             </property>
         </port>
         <port name="angle_pitch" class="ptolemy.actor.TypedIOPort">
@@ -557,19 +618,29 @@
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{395.0, 105.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{305.0, 120.0}">
             </property>
         </port>
         <entity name="PitchComputer" class="ptolemy.actor.TypedCompositeActor">
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{115.0, 95.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{25.0, 130.0}">
             </property>
-            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={749, 540, 939, 656}, maximized=false}">
+            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={549, 526, 939, 656}, maximized=false}">
             </property>
             <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 510]">
             </property>
             <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0">
             </property>
-            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{347.0, 421.015625}">
+            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{287.11764705882354, 56.529411764705856}">
+            </property>
+            <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+                <property name="textSize" class="ptolemy.data.expr.Parameter" value="14">
+                </property>
+                <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 0.0, 1.0}">
+                </property>
+                <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Calculates the pitch angle (rotation around the Y-axis) using accelerometer data.&#10;This determines the device's tilt relative to the direction of gravity.&#10;It is accurate for slow movements but susceptible to errors from external accelerations&#10;(e.g., fast motion or vibrations).">
+                </property>
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{-5.0, -15.0}">
+                </property>
             </property>
             <port name="acc_x" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
@@ -577,7 +648,7 @@
                 </property>
                 <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{260.0, 200.0}">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{370.0, 105.0}">
                 </property>
             </port>
             <port name="acc_y" class="ptolemy.actor.TypedIOPort">
@@ -586,7 +657,7 @@
                 </property>
                 <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{20.0, 200.0}">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{15.0, 95.0}">
                 </property>
             </port>
             <port name="acc_z" class="ptolemy.actor.TypedIOPort">
@@ -595,7 +666,7 @@
                 </property>
                 <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{20.0, 255.0}">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{15.0, 150.0}">
                 </property>
             </port>
             <port name="pitch" class="ptolemy.actor.TypedIOPort">
@@ -604,7 +675,7 @@
                 </property>
                 <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{725.0, 255.0}">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{730.0, 150.0}">
                 </property>
             </port>
             <entity name="Expression" class="ptolemy.actor.lib.Expression">
@@ -618,7 +689,7 @@
                     <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                     </property>
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{110.0, 200.0}">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{105.0, 95.0}">
                 </property>
                 <port name="in" class="ptolemy.actor.TypedIOPort">
                     <property name="input"/>
@@ -635,35 +706,18 @@
                     <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                     </property>
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{110.0, 255.0}">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{105.0, 150.0}">
                 </property>
                 <port name="in" class="ptolemy.actor.TypedIOPort">
                     <property name="input"/>
                 </port>
             </entity>
             <entity name="AddSubtract" class="ptolemy.actor.lib.AddSubtract">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{230.0, 265.0}">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{225.0, 160.0}">
                 </property>
-            </entity>
-            <entity name="Expression3" class="ptolemy.actor.lib.Expression">
-                <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="-in">
-                </property>
-                <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
-                    <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
-                    </property>
-                    <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
-                    </property>
-                    <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
-                    </property>
-                </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{345.0, 200.0}">
-                </property>
-                <port name="in" class="ptolemy.actor.TypedIOPort">
-                    <property name="input"/>
-                </port>
             </entity>
             <entity name="Expression4" class="ptolemy.actor.lib.Expression">
-                <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="atan2(in, in2)">
+                <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="atan2(-in, in2)">
                 </property>
                 <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
                     <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
@@ -673,7 +727,7 @@
                     <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                     </property>
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{500.0, 255.0}">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{495.0, 150.0}">
                 </property>
                 <port name="in" class="ptolemy.actor.TypedIOPort">
                     <property name="input"/>
@@ -697,14 +751,14 @@
                     <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                     </property>
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{355.0, 265.0}">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{350.0, 160.0}">
                 </property>
                 <port name="in" class="ptolemy.actor.TypedIOPort">
                     <property name="input"/>
                 </port>
             </entity>
             <entity name="Expression6" class="ptolemy.actor.lib.Expression">
-                <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="in * 180 / pi">
+                <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="in * (180 / pi)">
                 </property>
                 <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
                     <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
@@ -714,56 +768,52 @@
                     <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                     </property>
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{635.0, 255.0}">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{640.0, 150.0}">
                 </property>
                 <port name="in" class="ptolemy.actor.TypedIOPort">
                     <property name="input"/>
                 </port>
             </entity>
             <relation name="relation" class="ptolemy.actor.TypedIORelation">
-                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression.output&quot;,x=110.0,y=200.0}, tail={id=&quot;AddSubtract.plus&quot;,x=230.0,y=265.0,index=2}, points={175.0,200.0,175.0,250.0} } }">
+                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression.output&quot;,x=105.0,y=95.0}, tail={id=&quot;AddSubtract.plus&quot;,x=225.0,y=160.0,index=2}, points={170.0,95.0,170.0,145.0} } }">
                 </property>
             </relation>
             <relation name="relation2" class="ptolemy.actor.TypedIORelation">
-                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression2.output&quot;,x=110.0,y=255.0}, tail={id=&quot;AddSubtract.plus&quot;,x=230.0,y=265.0,index=2}, points={} } }">
-                </property>
-            </relation>
-            <relation name="relation3" class="ptolemy.actor.TypedIORelation">
-                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression3.output&quot;,x=345.0,y=200.0}, tail={id=&quot;Expression4.in&quot;,x=500.0,y=255.0}, points={420.0,200.0,420.0,245.0} } }">
-                </property>
-            </relation>
-            <relation name="relation5" class="ptolemy.actor.TypedIORelation">
-                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression3.in&quot;,x=345.0,y=200.0}, tail={id=&quot;acc_x._location&quot;,x=260.0,y=200.0}, points={} } }">
+                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression2.output&quot;,x=105.0,y=150.0}, tail={id=&quot;AddSubtract.plus&quot;,x=225.0,y=160.0,index=2}, points={} } }">
                 </property>
             </relation>
             <relation name="relation6" class="ptolemy.actor.TypedIORelation">
-                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression.in&quot;,x=110.0,y=200.0}, tail={id=&quot;acc_y._location&quot;,x=20.0,y=200.0}, points={} } }">
+                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;acc_y._location&quot;,x=15.0,y=95.0}, tail={id=&quot;Expression.in&quot;,x=105.0,y=95.0}, points={} } }">
                 </property>
             </relation>
             <relation name="relation7" class="ptolemy.actor.TypedIORelation">
-                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression2.in&quot;,x=110.0,y=255.0}, tail={id=&quot;acc_z._location&quot;,x=20.0,y=255.0}, points={} } }">
+                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;acc_z._location&quot;,x=15.0,y=150.0}, tail={id=&quot;Expression2.in&quot;,x=105.0,y=150.0}, points={} } }">
                 </property>
             </relation>
             <relation name="relation4" class="ptolemy.actor.TypedIORelation">
-                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression5.in&quot;,x=355.0,y=265.0}, tail={id=&quot;AddSubtract.output&quot;,x=230.0,y=265.0}, points={} } }">
+                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;AddSubtract.output&quot;,x=225.0,y=160.0}, tail={id=&quot;Expression5.in&quot;,x=350.0,y=160.0}, points={} } }">
                 </property>
             </relation>
-            <relation name="relation9" class="ptolemy.actor.TypedIORelation">
-                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression4.in2&quot;,x=500.0,y=255.0}, tail={id=&quot;Expression5.output&quot;,x=355.0,y=265.0}, points={} } }">
+            <relation name="relation3" class="ptolemy.actor.TypedIORelation">
+                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;acc_x._location&quot;,x=370.0,y=105.0}, tail={id=&quot;Expression4.in&quot;,x=495.0,y=150.0}, points={410.0,105.0,410.0,140.0} } }">
+                </property>
+            </relation>
+            <relation name="relation5" class="ptolemy.actor.TypedIORelation">
+                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression4.in2&quot;,x=495.0,y=150.0}, tail={id=&quot;Expression5.output&quot;,x=350.0,y=160.0}, points={} } }">
                 </property>
             </relation>
             <relation name="relation8" class="ptolemy.actor.TypedIORelation">
-                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression6.in&quot;,x=635.0,y=255.0}, tail={id=&quot;Expression4.output&quot;,x=500.0,y=255.0}, points={} } }">
+                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;pitch._location&quot;,x=730.0,y=150.0}, tail={id=&quot;Expression6.output&quot;,x=640.0,y=150.0}, points={} } }">
                 </property>
             </relation>
-            <relation name="relation10" class="ptolemy.actor.TypedIORelation">
-                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;pitch._location&quot;,x=725.0,y=255.0}, tail={id=&quot;Expression6.output&quot;,x=635.0,y=255.0}, points={} } }">
+            <relation name="relation9" class="ptolemy.actor.TypedIORelation">
+                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression4.output&quot;,x=495.0,y=150.0}, tail={id=&quot;Expression6.in&quot;,x=640.0,y=150.0}, points={} } }">
                 </property>
             </relation>
-            <link port="acc_x" relation="relation5"/>
+            <link port="acc_x" relation="relation3"/>
             <link port="acc_y" relation="relation6"/>
             <link port="acc_z" relation="relation7"/>
-            <link port="pitch" relation="relation10"/>
+            <link port="pitch" relation="relation8"/>
             <link port="Expression.output" relation="relation"/>
             <link port="Expression.in" relation="relation6"/>
             <link port="Expression2.output" relation="relation2"/>
@@ -771,50 +821,56 @@
             <link port="AddSubtract.plus" relation="relation"/>
             <link port="AddSubtract.plus" relation="relation2"/>
             <link port="AddSubtract.output" relation="relation4"/>
-            <link port="Expression3.output" relation="relation3"/>
-            <link port="Expression3.in" relation="relation5"/>
-            <link port="Expression4.output" relation="relation8"/>
+            <link port="Expression4.output" relation="relation9"/>
             <link port="Expression4.in" relation="relation3"/>
-            <link port="Expression4.in2" relation="relation9"/>
-            <link port="Expression5.output" relation="relation9"/>
+            <link port="Expression4.in2" relation="relation5"/>
+            <link port="Expression5.output" relation="relation5"/>
             <link port="Expression5.in" relation="relation4"/>
-            <link port="Expression6.output" relation="relation10"/>
-            <link port="Expression6.in" relation="relation8"/>
+            <link port="Expression6.output" relation="relation8"/>
+            <link port="Expression6.in" relation="relation9"/>
         </entity>
         <entity name="CompositeActor" class="ptolemy.actor.TypedCompositeActor">
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[275.0, 105.0]">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{185.0, 120.0}">
             </property>
-            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={511, 784, 939, 656}, maximized=false}">
+            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={479, 810, 939, 656}, maximized=false}">
             </property>
             <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 510]">
             </property>
-            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.6400000000000001">
+            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.7554658363841653">
             </property>
-            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{588.1305147058823, 193.58049938725495}">
+            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{445.671875, 169.92164855072463}">
             </property>
-            <port name="pitch" class="ptolemy.actor.TypedIOPort">
-                <property name="input"/>
-                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+                <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 0.0, 1.0}">
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{580.0, -10.0}">
+                <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Calculates a robust pitch angle by fusing gyroscope and accelerometer data using a Kalman filter.&#10;The gyroscope term (pitch + gyro_y * dt) provides a responsive, real-time measure of rotational changes.&#10;The accelerometer term acts as a stable, long-term reference (using gravity) to correct the gyroscope's inherent drift.&#10;This fusion technique leverages the strengths of both sensors for an accurate and stable orientation estimate.">
                 </property>
-            </port>
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{-15.0, -85.0}">
+                </property>
+            </property>
             <port name="gyro_y" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
                 <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{5.0, 50.0}">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{120.0, 75.0}">
                 </property>
             </port>
             <port name="angle_pitch" class="ptolemy.actor.TypedIOPort">
                 <property name="output"/>
                 <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{1085.0, 5.0}">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{200.0, 185.0}">
+                </property>
+            </port>
+            <port name="pitch" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{295.0, 25.0}">
                 </property>
             </port>
             <entity name="gyro_angle_change" class="ptolemy.actor.lib.Expression">
-                <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="in * (1/signalFrequency)">
+                <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="in * dt">
                 </property>
                 <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
                     <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
@@ -824,14 +880,19 @@
                     <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                     </property>
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{140.0, 50.0}">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{220.0, 85.0}">
                 </property>
                 <port name="in" class="ptolemy.actor.TypedIOPort">
                     <property name="input"/>
                 </port>
+                <port name="dt" class="ptolemy.actor.TypedIOPort">
+                    <property name="input"/>
+                    <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                    </property>
+                </port>
             </entity>
             <entity name="angle_pitch2" class="ptolemy.actor.lib.Expression">
-                <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="alpha * (angle_pitch + gyro_angle_change)">
+                <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="(1 - alpha) * pitch">
                 </property>
                 <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
                     <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
@@ -841,41 +902,13 @@
                     <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                     </property>
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{460.0, 60.0}">
-                </property>
-                <port name="gyro_angle_change" class="ptolemy.actor.TypedIOPort">
-                    <property name="input"/>
-                    <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-                    </property>
-                </port>
-                <port name="angle_pitch" class="ptolemy.actor.TypedIOPort">
-                    <property name="input"/>
-                    <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-                    </property>
-                </port>
-            </entity>
-            <entity name="Expression" class="ptolemy.actor.lib.Expression">
-                <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="(1.0 - alpha) * pitch">
-                </property>
-                <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
-                    <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
-                    </property>
-                    <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
-                    </property>
-                    <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
-                    </property>
-                </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{715.0, -10.0}">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{525.0, 25.0}">
                 </property>
                 <port name="pitch" class="ptolemy.actor.TypedIOPort">
                     <property name="input"/>
                     <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
                     </property>
                 </port>
-            </entity>
-            <entity name="AddSubtract" class="ptolemy.actor.lib.AddSubtract">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{860.0, 5.0}">
-                </property>
             </entity>
             <entity name="SampleDelay" class="ptolemy.domains.sdf.lib.SampleDelay">
                 <property name="initialOutputs" class="ptolemy.data.expr.Parameter" value="{0.0}">
@@ -888,89 +921,125 @@
                     <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="displayWidth">
                     </property>
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{855.0, 60.0}">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{235.0, 140.0}">
                 </property>
             </entity>
-            <entity name="MovingAverage" class="ptolemy.actor.lib.MovingAverage">
-                <property name="maxPastInputsToAverage" class="ptolemy.data.expr.Parameter" value="window_size">
+            <entity name="angle_pitch3" class="ptolemy.actor.lib.Expression">
+                <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="alpha * (angle_pitch + gyro_angle_change)">
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{990.0, 5.0}">
+                <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                    <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+                    </property>
+                    <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                    </property>
+                    <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+                    </property>
+                </property>
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{550.0, 95.0}">
+                </property>
+                <port name="gyro_angle_change" class="ptolemy.actor.TypedIOPort">
+                    <property name="input"/>
+                    <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                    </property>
+                </port>
+                <port name="angle_pitch" class="ptolemy.actor.TypedIOPort">
+                    <property name="input"/>
+                    <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                    </property>
+                </port>
+            </entity>
+            <entity name="AddSubtract" class="ptolemy.actor.lib.AddSubtract">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{760.0, 40.0}">
                 </property>
             </entity>
-            <relation name="relation3" class="ptolemy.actor.TypedIORelation">
-                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyro_angle_change.output&quot;,x=140.0,y=50.0}, tail={id=&quot;angle_pitch2.gyro_angle_change&quot;,x=460.0,y=60.0}, points={} } }">
+            <entity name="dt" class="ptolemy.actor.lib.Expression">
+                <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="(1.0 / signalFrequency)">
                 </property>
-            </relation>
-            <relation name="relation4" class="ptolemy.actor.TypedIORelation">
-                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression.output&quot;,x=715.0,y=-10.0}, tail={id=&quot;AddSubtract.plus&quot;,x=860.0,y=5.0,index=2}, points={} } }">
+                <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                    <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+                    </property>
+                    <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                    </property>
+                    <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+                    </property>
                 </property>
-            </relation>
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{65.0, 130.0}">
+                </property>
+            </entity>
             <relation name="relation6" class="ptolemy.actor.TypedIORelation">
-                <vertex name="vertex1" value="{805.0, 60.0}">
+                <vertex name="vertex1" value="{165.0, 185.0}">
                 </vertex>
-                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;SampleDelay.input&quot;,x=855.0,y=60.0}, tail={id=&quot;relation6.vertex1&quot;,x=805.0,y=60.0}, points={} },{ head={id=&quot;AddSubtract.plus&quot;,x=860.0,y=5.0,index=2}, tail={id=&quot;relation6.vertex1&quot;,x=805.0,y=60.0}, points={805.0,-5.0} },{ head={id=&quot;angle_pitch2.output&quot;,x=460.0,y=60.0}, tail={id=&quot;relation6.vertex1&quot;,x=805.0,y=60.0}, points={} } }">
-                </property>
-            </relation>
-            <relation name="relation7" class="ptolemy.actor.TypedIORelation">
-                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;angle_pitch2.angle_pitch&quot;,x=460.0,y=60.0}, tail={id=&quot;SampleDelay.output&quot;,x=855.0,y=60.0}, points={240.0,70.0,240.0,85.0,930.0,85.0,930.0,60.0} } }">
-                </property>
-            </relation>
-            <relation name="relation2" class="ptolemy.actor.TypedIORelation">
-                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyro_y._location&quot;,x=5.0,y=50.0}, tail={id=&quot;gyro_angle_change.in&quot;,x=140.0,y=50.0}, points={} } }">
+                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;SampleDelay.input&quot;,x=235.0,y=140.0}, tail={id=&quot;relation6.vertex1&quot;,x=165.0,y=185.0}, points={165.0,140.0} },{ head={id=&quot;angle_pitch._location&quot;,x=200.0,y=185.0}, tail={id=&quot;relation6.vertex1&quot;,x=165.0,y=185.0}, points={} },{ head={id=&quot;angle_pitch2.output&quot;,x=500.0,y=-90.0}, tail={id=&quot;relation6.vertex1&quot;,x=725.0,y=-90.0}, points={} },{ head={id=&quot;relation6.vertex1&quot;,x=165.0,y=185.0}, tail={id=&quot;AddSubtract.output&quot;,x=760.0,y=40.0}, points={165.0,215.0,830.0,215.0,830.0,40.0} } }">
                 </property>
             </relation>
             <relation name="relation" class="ptolemy.actor.TypedIORelation">
-                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;pitch._location&quot;,x=580.0,y=-10.0}, tail={id=&quot;Expression.pitch&quot;,x=715.0,y=-10.0}, points={} } }">
+                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;pitch._location&quot;,x=295.0,y=25.0}, tail={id=&quot;angle_pitch2.pitch&quot;,x=525.0,y=25.0}, points={} } }">
+                </property>
+            </relation>
+            <relation name="relation2" class="ptolemy.actor.TypedIORelation">
+                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyro_y._location&quot;,x=120.0,y=75.0}, tail={id=&quot;gyro_angle_change.in&quot;,x=220.0,y=85.0}, points={} } }">
+                </property>
+            </relation>
+            <relation name="relation3" class="ptolemy.actor.TypedIORelation">
+                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyro_angle_change.output&quot;,x=220.0,y=85.0}, tail={id=&quot;angle_pitch3.gyro_angle_change&quot;,x=550.0,y=95.0}, points={} } }">
+                </property>
+            </relation>
+            <relation name="relation4" class="ptolemy.actor.TypedIORelation">
+                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;angle_pitch3.angle_pitch&quot;,x=550.0,y=95.0}, tail={id=&quot;SampleDelay.output&quot;,x=235.0,y=140.0}, points={330.0,105.0,330.0,140.0} } }">
                 </property>
             </relation>
             <relation name="relation5" class="ptolemy.actor.TypedIORelation">
-                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;MovingAverage.input&quot;,x=990.0,y=5.0}, tail={id=&quot;AddSubtract.output&quot;,x=860.0,y=5.0}, points={} } }">
+                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;angle_pitch2.output&quot;,x=525.0,y=25.0}, tail={id=&quot;AddSubtract.plus&quot;,x=760.0,y=40.0,index=2}, points={} } }">
+                </property>
+            </relation>
+            <relation name="relation7" class="ptolemy.actor.TypedIORelation">
+                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;AddSubtract.plus&quot;,x=760.0,y=40.0,index=2}, tail={id=&quot;angle_pitch3.output&quot;,x=550.0,y=95.0}, points={705.0,30.0,705.0,95.0} } }">
                 </property>
             </relation>
             <relation name="relation8" class="ptolemy.actor.TypedIORelation">
-                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;angle_pitch._location&quot;,x=1085.0,y=5.0}, tail={id=&quot;MovingAverage.output&quot;,x=990.0,y=5.0}, points={} } }">
+                <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyro_angle_change.dt&quot;,x=220.0,y=85.0}, tail={id=&quot;dt.output&quot;,x=65.0,y=130.0}, points={165.0,95.0,165.0,130.0} } }">
                 </property>
             </relation>
-            <link port="pitch" relation="relation"/>
             <link port="gyro_y" relation="relation2"/>
-            <link port="angle_pitch" relation="relation8"/>
+            <link port="angle_pitch" relation="relation6"/>
+            <link port="pitch" relation="relation"/>
             <link port="gyro_angle_change.output" relation="relation3"/>
             <link port="gyro_angle_change.in" relation="relation2"/>
-            <link port="angle_pitch2.output" relation="relation6"/>
-            <link port="angle_pitch2.gyro_angle_change" relation="relation3"/>
-            <link port="angle_pitch2.angle_pitch" relation="relation7"/>
-            <link port="Expression.output" relation="relation4"/>
-            <link port="Expression.pitch" relation="relation"/>
-            <link port="AddSubtract.plus" relation="relation4"/>
-            <link port="AddSubtract.plus" relation="relation6"/>
-            <link port="AddSubtract.output" relation="relation5"/>
+            <link port="gyro_angle_change.dt" relation="relation8"/>
+            <link port="angle_pitch2.output" relation="relation5"/>
+            <link port="angle_pitch2.pitch" relation="relation"/>
             <link port="SampleDelay.input" relation="relation6"/>
-            <link port="SampleDelay.output" relation="relation7"/>
-            <link port="MovingAverage.input" relation="relation5"/>
-            <link port="MovingAverage.output" relation="relation8"/>
+            <link port="SampleDelay.output" relation="relation4"/>
+            <link port="angle_pitch3.output" relation="relation7"/>
+            <link port="angle_pitch3.gyro_angle_change" relation="relation3"/>
+            <link port="angle_pitch3.angle_pitch" relation="relation4"/>
+            <link port="AddSubtract.plus" relation="relation5"/>
+            <link port="AddSubtract.plus" relation="relation7"/>
+            <link port="AddSubtract.output" relation="relation6"/>
+            <link port="dt.output" relation="relation8"/>
         </entity>
         <relation name="relation" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;PitchComputer.acc_x&quot;,x=115.0,y=95.0}, tail={id=&quot;acc_x._location&quot;,x=5.0,y=40.0}, points={35.0,85.0,35.0,40.0} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;acc_x._location&quot;,x=-100.0,y=30.0}, tail={id=&quot;PitchComputer.acc_x&quot;,x=25.0,y=130.0}, points={-55.0,30.0,-55.0,120.0} } }">
             </property>
         </relation>
         <relation name="relation2" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;PitchComputer.acc_y&quot;,x=115.0,y=95.0}, tail={id=&quot;acc_y._location&quot;,x=5.0,y=95.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;acc_y._location&quot;,x=-100.0,y=85.0}, tail={id=&quot;PitchComputer.acc_y&quot;,x=25.0,y=130.0}, points={-70.0,85.0,-70.0,130.0} } }">
             </property>
         </relation>
         <relation name="relation3" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;PitchComputer.acc_z&quot;,x=115.0,y=95.0}, tail={id=&quot;acc_z._location&quot;,x=5.0,y=150.0}, points={35.0,105.0,35.0,150.0} } }">
-            </property>
-        </relation>
-        <relation name="relation4" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;CompositeActor.pitch&quot;,x=275.0,y=105.0}, tail={id=&quot;PitchComputer.pitch&quot;,x=115.0,y=95.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;acc_z._location&quot;,x=-100.0,y=140.0}, tail={id=&quot;PitchComputer.acc_z&quot;,x=25.0,y=130.0}, points={} } }">
             </property>
         </relation>
         <relation name="relation5" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;CompositeActor.gyro_y&quot;,x=275.0,y=105.0}, tail={id=&quot;gyro_y._location&quot;,x=145.0,y=150.0}, points={190.0,115.0,190.0,150.0} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyro_y._location&quot;,x=55.0,y=60.0}, tail={id=&quot;CompositeActor.gyro_y&quot;,x=185.0,y=120.0}, points={100.0,60.0,100.0,110.0} } }">
             </property>
         </relation>
         <relation name="relation6" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;angle_pitch._location&quot;,x=395.0,y=105.0}, tail={id=&quot;CompositeActor.angle_pitch&quot;,x=275.0,y=105.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;angle_pitch._location&quot;,x=305.0,y=120.0}, tail={id=&quot;CompositeActor.angle_pitch&quot;,x=185.0,y=120.0}, points={} } }">
+            </property>
+        </relation>
+        <relation name="relation4" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;PitchComputer.pitch&quot;,x=25.0,y=130.0}, tail={id=&quot;CompositeActor.pitch&quot;,x=185.0,y=120.0}, points={} } }">
             </property>
         </relation>
         <link port="acc_x" relation="relation"/>
@@ -982,24 +1051,26 @@
         <link port="PitchComputer.acc_y" relation="relation2"/>
         <link port="PitchComputer.acc_z" relation="relation3"/>
         <link port="PitchComputer.pitch" relation="relation4"/>
-        <link port="CompositeActor.pitch" relation="relation4"/>
         <link port="CompositeActor.gyro_y" relation="relation5"/>
         <link port="CompositeActor.angle_pitch" relation="relation6"/>
+        <link port="CompositeActor.pitch" relation="relation4"/>
     </entity>
     <entity name="AnglePitchPlotter" class="ptolemy.actor.lib.gui.TimedPlotter">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={21, 45, 522, 387}, maximized=false}">
+        <property name="legend" class="ptolemy.kernel.util.StringAttribute" value="Angle pitch">
+        </property>
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={4, 46, 522, 387}, maximized=false}">
         </property>
         <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[500, 300]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{980.0, 210.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{965.0, 180.0}">
         </property>
         <configure>
 <?plotml <!DOCTYPE plot PUBLIC "-//UC Berkeley//DTD PlotML 1//EN"
 "http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
 <plot>
 <title>TimedPlotter</title>
-<xRange min="0.0" max="415.0"/>
-<yRange min="-0.500460586687474" max="0.9359305536700115"/>
+<xRange min="0.0" max="387.0"/>
+<yRange min="-1.5713530414948915" max="73.22527751234227"/>
 </plot>?>
         </configure>
     </entity>
@@ -1008,177 +1079,57 @@
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[352, 186]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{1215.0, 205.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{1385.0, 310.0}">
         </property>
-    </entity>
-    <entity name="ActivityDetectionFSM" class="ptolemy.domains.modal.kernel.FSMActor">
-        <property name="_library" class="ptolemy.moml.LibraryAttribute">
-            <configure>
-    <entity name="StateLibrary" class="ptolemy.kernel.CompositeEntity"><input source="ptolemy/configs/basicUtilities.xml"></input><entity name="State" class="ptolemy.domains.modal.kernel.State"><property name="_centerName" class="ptolemy.kernel.util.Attribute"></property></entity></entity>
-  </configure>
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{1030.0, 140.0}">
-        </property>
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={610, 392, 939, 656}, maximized=false}">
-        </property>
-        <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 510]">
-        </property>
-        <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.8000000000000007">
-        </property>
-        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{620.5784119250727, 490.0251083374024}">
-        </property>
-        <port name="angle_pitch" class="ptolemy.domains.modal.modal.RefinementPort">
-            <property name="input"/>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter" value="">
-            </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{25.0, 75.0}">
-            </property>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="acceleration" class="ptolemy.domains.modal.modal.RefinementPort">
-            <property name="input"/>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter" value="">
-            </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{25.0, 140.0}">
-            </property>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="activity" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{695.0, 110.0}">
-            </property>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="rotationrate" class="ptolemy.actor.TypedIOPort">
-            <property name="input"/>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{20.0, 200.0}">
-            </property>
-        </port>
-        <entity name="walking" class="ptolemy.domains.modal.kernel.State">
-            <property name="isInitialState" class="ptolemy.data.expr.Parameter" value="true">
-            </property>
-            <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[460.0, 40.0]">
-            </property>
-        </entity>
-        <entity name="jogging" class="ptolemy.domains.modal.kernel.State">
-            <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[875.0, 600.0]">
-            </property>
-        </entity>
-        <entity name="fall" class="ptolemy.domains.modal.kernel.State">
-            <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[235.0, 680.0]">
-            </property>
-        </entity>
-        <relation name="relation" class="ptolemy.domains.modal.kernel.Transition">
-            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="angle_pitch &lt;= 423.81 &amp;&amp; angle_pitch &lt;= 165.60">
-            </property>
-            <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="activity = &quot;walk to jogging&quot;">
-            </property>
-            <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.015654785739889654">
-            </property>
-            <property name="gamma" class="ptolemy.data.expr.Parameter" value="0.6658852663987522">
-            </property>
-        </relation>
-        <relation name="relation2" class="ptolemy.domains.modal.kernel.Transition">
-            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="(angle_pitch &gt; 423.81 &amp;&amp; angle_pitch &lt;= 467.97 &amp;&amp; rotationrate &lt;= 2.84) || (angle_pitch &gt; 423.81 &amp;&amp; angle_pitch &gt; 467.97)">
-            </property>
-            <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="activity = &quot;jog to walking&quot;">
-            </property>
-            <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.6283185307179586">
-            </property>
-            <property name="gamma" class="ptolemy.data.expr.Parameter" value="-2.6840551522727183">
-            </property>
-        </relation>
-        <relation name="relation3" class="ptolemy.domains.modal.kernel.Transition">
-            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="angle_pitch &lt;= 423.81 &amp;&amp; angle_pitch &gt; 165.60 || angle_pitch &gt; 423.81 &amp;&amp; angle_pitch &lt;= 467.97 &amp;&amp; rotationrate &gt; 2.84">
-            </property>
-            <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="activity = &quot;fall&quot;">
-            </property>
-            <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.9803653295570246">
-            </property>
-            <property name="gamma" class="ptolemy.data.expr.Parameter" value="1.5317061055374763">
-            </property>
-        </relation>
-        <relation name="relation4" class="ptolemy.domains.modal.kernel.Transition">
-            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="angle_pitch &lt;= 423.81 &amp;&amp; angle_pitch &gt; 165.60 || angle_pitch &gt; 423.81 &amp;&amp; angle_pitch &lt;= 467.97 &amp;&amp; rotationrate &gt; 2.84">
-            </property>
-            <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="activity = &quot;fall&quot;">
-            </property>
-            <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="-0.04861713280716724">
-            </property>
-            <property name="gamma" class="ptolemy.data.expr.Parameter" value="3.0175198196137942">
-            </property>
-        </relation>
-        <relation name="relation5" class="ptolemy.domains.modal.kernel.Transition">
-            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="(angle_pitch &gt; 423.81 &amp;&amp; angle_pitch &lt;= 467.97 &amp;&amp; rotationrate &lt;= 2.84) || (angle_pitch &gt; 423.81 &amp;&amp; angle_pitch &gt; 467.97)">
-            </property>
-            <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="activity = &quot;fall to walking&quot;">
-            </property>
-            <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.011270297306885262">
-            </property>
-            <property name="gamma" class="ptolemy.data.expr.Parameter" value="-1.6278766957199438">
-            </property>
-        </relation>
-        <relation name="relation7" class="ptolemy.domains.modal.kernel.Transition">
-            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="angle_pitch &lt;= 423.81 &amp;&amp; angle_pitch &lt;= 165.60">
-            </property>
-            <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="activity = &quot;fall to jogg&quot;">
-            </property>
-            <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.6283185307179586">
-            </property>
-            <property name="gamma" class="ptolemy.data.expr.Parameter" value="-0.03318878600630095">
-            </property>
-        </relation>
-        <link port="walking.incomingPort" relation="relation2"/>
-        <link port="walking.incomingPort" relation="relation5"/>
-        <link port="walking.outgoingPort" relation="relation"/>
-        <link port="walking.outgoingPort" relation="relation3"/>
-        <link port="jogging.incomingPort" relation="relation"/>
-        <link port="jogging.incomingPort" relation="relation7"/>
-        <link port="jogging.outgoingPort" relation="relation2"/>
-        <link port="jogging.outgoingPort" relation="relation4"/>
-        <link port="fall.incomingPort" relation="relation3"/>
-        <link port="fall.incomingPort" relation="relation4"/>
-        <link port="fall.outgoingPort" relation="relation5"/>
-        <link port="fall.outgoingPort" relation="relation7"/>
     </entity>
     <entity name="DiscreteClock" class="ptolemy.actor.lib.DiscreteClock">
         <doc>Create periodic timed events.</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{65.0, 210.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{55.0, 170.0}">
         </property>
     </entity>
-    <entity name="AlarmActor" class="ptolemy.actor.TypedCompositeActor">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{1225.0, 140.0}">
+    <entity name="emergencyDelay" class="ptolemy.actor.TypedCompositeActor">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{1395.0, 250.0}">
         </property>
-        <property name="DE Director" class="ptolemy.domains.de.kernel.DEDirector">
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{45.0, -135.0}">
-            </property>
-        </property>
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={610, 392, 1098, 765}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={700, 398, 1098, 765}, maximized=false}">
         </property>
         <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[859, 619]">
         </property>
-        <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0000000000000009">
+        <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.6487299644807952">
         </property>
-        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{661.5000000000001, 132.4420955882351}">
+        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{565.6666666666667, -224.33333333333314}">
+        </property>
+        <property name="emergencyDelay" class="ptolemy.data.expr.Parameter" value="5000">
+            <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+                <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+                </property>
+            </property>
+            <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+                <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+            </property>
+            <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{-55.0, -585.0}">
+            </property>
+        </property>
+        <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+            <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 0.0, 1.0}">
+            </property>
+            <property name="text" class="ptolemy.kernel.util.StringAttribute" value="This component manages the emergency response mechanism. Upon fall detection, the &#10;Finite State Machine (FSM) transitions to an &quot;alarm&quot; state, which prompts the user to confirm &#10;their status. If the user indicates they are safe, the system registers it as a false alarm and&#10;returns to the normal &quot;running&quot; state. Otherwise, it escalates to an &quot;emergency&quot; state, &#10;activating safety protocols such as a wearable alert signal. To ensure user safety, if no &#10;response is received within a predefined timeout period, the system automatically triggers &#10;the emergency state.&#10;">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{90.0, -595.0}">
+            </property>
         </property>
         <port name="activity" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
             <property name="defaultValue" class="ptolemy.data.expr.Parameter" value="">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{5.0, -75.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{800.0, -275.0}">
             </property>
         </port>
         <entity name="FSMActor" class="ptolemy.domains.modal.kernel.FSMActor">
@@ -1187,35 +1138,40 @@
     <entity name="StateLibrary" class="ptolemy.kernel.CompositeEntity"><input source="ptolemy/configs/basicUtilities.xml"></input><entity name="State" class="ptolemy.domains.modal.kernel.State"><property name="_centerName" class="ptolemy.kernel.util.Attribute"></property></entity></entity>
   </configure>
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{135.0, -65.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{935.0, -220.0}">
             </property>
             <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={610, 392, 939, 656}, maximized=false}">
             </property>
             <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 510]">
             </property>
-            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.25">
+            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0">
             </property>
-            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{356.69898897058823, 315.5675551470588}">
+            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{454.8318008722043, 274.81528906728704}">
             </property>
             <port name="activity" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{10.0, 245.0}">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[25.0, 245.0]">
                 </property>
                 <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
             </port>
-            <port name="user_input" class="ptolemy.actor.TypedIOPort">
+            <port name="userInput" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
                 <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[10.0, 195.0]">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[20.0, 295.0]">
                 </property>
             </port>
             <port name="alarm" class="ptolemy.actor.TypedIOPort">
                 <property name="output"/>
-                <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[740.0, 275.0]">
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[655.0, 220.0]">
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+            <port name="emergency" class="ptolemy.actor.TypedIOPort">
+                <property name="output"/>
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[740.0, 410.0]">
                 </property>
                 <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
@@ -1223,15 +1179,21 @@
             <entity name="Running" class="ptolemy.domains.modal.kernel.State">
                 <property name="isInitialState" class="ptolemy.data.expr.Parameter" value="true">
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[171.9896359964021, 217.60445824209415]">
-                </property>
                 <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[255.0, 230.0]">
                 </property>
             </entity>
             <entity name="Alarm" class="ptolemy.domains.modal.kernel.State">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[401.98963599640206, 212.60445824209415]">
-                </property>
                 <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[485.0, 225.0]">
+                </property>
+            </entity>
+            <entity name="Emergency" class="ptolemy.domains.modal.kernel.State">
+                <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[398.01036400359794, 462.39554175790585]">
                 </property>
             </entity>
             <relation name="relation" class="ptolemy.domains.modal.kernel.Transition">
@@ -1245,41 +1207,42 @@
                 </property>
             </relation>
             <relation name="relation2" class="ptolemy.domains.modal.kernel.Transition">
-                <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="user_input == &quot;safe&quot;">
-                </property>
-                <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute">
+                <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="userInput == &quot;safe&quot;">
                 </property>
                 <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.6283185307179586">
                 </property>
                 <property name="gamma" class="ptolemy.data.expr.Parameter" value="3.0593887493374115">
                 </property>
             </relation>
-            <relation name="relation3" class="ptolemy.domains.modal.kernel.Transition">
-                <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="alarm = true">
+            <relation name="relation4" class="ptolemy.domains.modal.kernel.Transition">
+                <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="userInput == &quot;fall&quot;">
                 </property>
-                <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="2.7231704627463245">
+                <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="emergency = true">
                 </property>
-                <property name="gamma" class="ptolemy.data.expr.Parameter" value="-1.5134052359165477">
+                <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="-0.6312523745861871">
                 </property>
-                <property name="defaultTransition" class="ptolemy.data.expr.Parameter" value="true">
-                    <display name="default"/>
+                <property name="gamma" class="ptolemy.data.expr.Parameter" value="1.869514880993457">
+                </property>
+            </relation>
+            <relation name="relation5" class="ptolemy.domains.modal.kernel.Transition">
+                <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="userInput == &quot;safe&quot;">
+                </property>
+                <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="-0.9527770445472343">
+                </property>
+                <property name="gamma" class="ptolemy.data.expr.Parameter" value="-2.671103652763664">
                 </property>
             </relation>
             <link port="Running.incomingPort" relation="relation2"/>
+            <link port="Running.incomingPort" relation="relation5"/>
             <link port="Running.outgoingPort" relation="relation"/>
             <link port="Alarm.incomingPort" relation="relation"/>
-            <link port="Alarm.incomingPort" relation="relation3"/>
             <link port="Alarm.outgoingPort" relation="relation2"/>
-            <link port="Alarm.outgoingPort" relation="relation3"/>
-        </entity>
-        <entity name="TimeDelay" class="ptolemy.actor.lib.TimeDelay">
-            <property name="delay" class="ptolemy.actor.parameters.PortParameter" value="1/signalFrequency">
-            </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{1025.0, -55.0}">
-            </property>
+            <link port="Alarm.outgoingPort" relation="relation4"/>
+            <link port="Emergency.incomingPort" relation="relation4"/>
+            <link port="Emergency.outgoingPort" relation="relation5"/>
         </entity>
         <entity name="WarningMessage" class="ptolemy.actor.lib.Expression">
-            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="&quot;? WARNING ?\nFALL DETECTED\nAre you okay? [yes/no]&quot;">
+            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="&quot;?WARNING?\nFALL DETECTED\nAre you okay? [y/N]&quot;">
             </property>
             <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
                 <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
@@ -1289,21 +1252,20 @@
                 <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                 </property>
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{410.0, -65.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{150.0, -210.0}">
             </property>
             <port name="in" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
             </port>
         </entity>
-        <entity name="InteractiveShell2" class="ptolemy.actor.lib.gui.InteractiveShell">
-            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={825, 580, 670, 521}, maximized=false}">
+        <entity name="TimeDelay" class="ptolemy.actor.lib.TimeDelay">
+            <property name="delay" class="ptolemy.actor.parameters.PortParameter" value="1/signalFrequency">
             </property>
-            <doc>Produce strings from an interactive shell on the screen</doc>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{680.0, -55.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{785.0, -210.0}">
             </property>
         </entity>
         <entity name="Expression4" class="ptolemy.actor.lib.Expression">
-            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="in == &quot;yes&quot;? &quot;safe&quot;:&quot;fall&quot;">
+            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="in == &quot;y&quot;? &quot;safe&quot;:&quot;fall&quot;">
             </property>
             <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
                 <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
@@ -1313,163 +1275,845 @@
                 <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                 </property>
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{870.0, -55.0}">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{605.0, -210.0}">
+            </property>
+            <port name="in" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+            </port>
+        </entity>
+        <entity name="Expression" class="ptolemy.actor.lib.Expression">
+            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="&quot;EMERGENCY\nPress any button&quot;">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+                </property>
+                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                </property>
+                <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+                </property>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{1165.0, -210.0}">
+            </property>
+            <port name="in" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+            </port>
+        </entity>
+        <entity name="ThreadedComposite2" class="ptolemy.actor.lib.hoc.ThreadedComposite">
+            <property name="delay" class="ptolemy.data.expr.Parameter" value="UNDEFINED">
+            </property>
+            <doc>Execute the contained model in a separate thread with optional real-time properties.</doc>
+            <property name="_icon" class="ptolemy.vergil.icon.CopyCatIcon">
+                <property name="echos" class="ptolemy.data.expr.Parameter" value="1">
+                </property>
+                <property name="echoBoxColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 1.0, 0.0, 1.0}">
+                </property>
+            </property>
+            <property name="_configurer" class="ptolemy.actor.gui.EditorPaneFactory">
+            </property>
+            <property name="_configurer2" class="ptolemy.actor.gui.InsideEntityEditorPaneFactory">
+            </property>
+            <property name="_tableauFactory" class="ptolemy.actor.gui.LevelSkippingTableauFactory">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{395.0, -210.0}">
+            </property>
+            <port name="input" class="ptolemy.actor.lib.hoc.MirrorPort">
+                <property name="input"/>
+            </port>
+            <port name="output" class="ptolemy.actor.lib.hoc.MirrorPort">
+                <property name="output"/>
+            </port>
+            <entity name="InteractiveShell" class="ptolemy.actor.lib.gui.InteractiveShell">
+                <property name="prompt" class="ptolemy.actor.parameters.PortParameter" value="&gt;&gt; ">
+                </property>
+                <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={449, 919, 670, 521}, maximized=false}">
+                </property>
+                <doc>Produce strings from an interactive shell on the screen</doc>
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{220, 145}">
+                </property>
+            </entity>
+        </entity>
+        <entity name="ThreadedComposite" class="ptolemy.actor.lib.hoc.ThreadedComposite">
+            <property name="delay" class="ptolemy.data.expr.Parameter" value="UNDEFINED">
+            </property>
+            <doc>Execute the contained model in a separate thread with optional real-time properties.</doc>
+            <property name="_icon" class="ptolemy.vergil.icon.CopyCatIcon">
+                <property name="echos" class="ptolemy.data.expr.Parameter" value="1">
+                </property>
+                <property name="echoBoxColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 1.0, 0.0, 1.0}">
+                </property>
+            </property>
+            <property name="_configurer" class="ptolemy.actor.gui.EditorPaneFactory">
+            </property>
+            <property name="_configurer2" class="ptolemy.actor.gui.InsideEntityEditorPaneFactory">
+            </property>
+            <property name="_tableauFactory" class="ptolemy.actor.gui.LevelSkippingTableauFactory">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{400.0, -405.0}">
+            </property>
+            <port name="input" class="ptolemy.actor.lib.hoc.MirrorPort">
+                <property name="input"/>
+            </port>
+            <port name="output" class="ptolemy.actor.lib.hoc.MirrorPort">
+                <property name="output"/>
+            </port>
+            <entity name="InteractiveShell" class="ptolemy.actor.lib.gui.InteractiveShell">
+                <property name="prompt" class="ptolemy.actor.parameters.PortParameter" value="&gt;&gt; ">
+                </property>
+                <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={1253, 777, 670, 521}, maximized=false}">
+                </property>
+                <doc>Produce strings from an interactive shell on the screen</doc>
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{220, 145}">
+                </property>
+            </entity>
+        </entity>
+        <entity name="Expression2" class="ptolemy.actor.lib.Expression">
+            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="&quot;safe&quot;">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+                </property>
+                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                </property>
+                <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+                </property>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{595.0, -335.0}">
+            </property>
+            <port name="in" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+            </port>
+        </entity>
+        <entity name="TimeDelay2" class="ptolemy.actor.lib.TimeDelay">
+            <property name="delay" class="ptolemy.actor.parameters.PortParameter" value="emergencyDelay">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{150.0, -290.0}">
+            </property>
+        </entity>
+        <entity name="Expression3" class="ptolemy.actor.lib.Expression">
+            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="&quot;fall&quot;">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+                </property>
+                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                </property>
+                <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+                </property>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{595.0, -290.0}">
             </property>
             <port name="in" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
             </port>
         </entity>
         <relation name="relation4" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;activity._location&quot;,x=5.0,y=-75.0}, tail={id=&quot;FSMActor.activity&quot;,x=135.0,y=-65.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;activity._location&quot;,x=800.0,y=-275.0}, tail={id=&quot;FSMActor.activity&quot;,x=935.0,y=-220.0}, points={845.0,-275.0,845.0,-230.0} } }">
+            </property>
+        </relation>
+        <relation name="relation7" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;FSMActor.emergency&quot;,x=935.0,y=-220.0}, tail={id=&quot;Expression.in&quot;,x=1165.0,y=-210.0}, points={} } }">
             </property>
         </relation>
         <relation name="relation3" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;FSMActor.user_input&quot;,x=135.0,y=-65.0}, tail={id=&quot;TimeDelay.output&quot;,x=1025.0,y=-55.0}, points={40.0,-55.0,40.0,-5.0,1090.0,-5.0,1090.0,-55.0} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;FSMActor.userInput&quot;,x=935.0,y=-220.0}, tail={id=&quot;TimeDelay.output&quot;,x=785.0,y=-210.0}, points={} } }">
+            </property>
+        </relation>
+        <relation name="relation9" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression4.in&quot;,x=605.0,y=-210.0}, tail={id=&quot;ThreadedComposite2.output&quot;,x=395.0,y=-210.0}, points={} } }">
+            </property>
+        </relation>
+        <relation name="relation5" class="ptolemy.actor.TypedIORelation">
+            <vertex name="vertex1" value="{710.0, -210.0}">
+            </vertex>
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression4.output&quot;,x=605.0,y=-210.0}, tail={id=&quot;relation5.vertex1&quot;,x=710.0,y=-210.0}, points={} },{ head={id=&quot;TimeDelay.input&quot;,x=785.0,y=-210.0}, tail={id=&quot;relation5.vertex1&quot;,x=710.0,y=-210.0}, points={} },{ head={id=&quot;Expression2.output&quot;,x=595.0,y=-335.0}, tail={id=&quot;relation5.vertex1&quot;,x=710.0,y=-210.0}, points={695.0,-335.0,695.0,-210.0} },{ head={id=&quot;Expression3.output&quot;,x=595.0,y=-290.0}, tail={id=&quot;relation5.vertex1&quot;,x=710.0,y=-210.0}, points={695.0,-290.0,695.0,-210.0} } }">
+            </property>
+        </relation>
+        <relation name="relation6" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression.output&quot;,x=1165.0,y=-210.0}, tail={id=&quot;ThreadedComposite.input&quot;,x=400.0,y=-405.0}, points={1295.0,-210.0,1295.0,-455.0,335.0,-455.0,335.0,-405.0} } }">
             </property>
         </relation>
         <relation name="relation8" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;InteractiveShell2.input&quot;,x=680.0,y=-55.0}, tail={id=&quot;WarningMessage.output&quot;,x=410.0,y=-65.0}, points={} } }">
-            </property>
-        </relation>
-        <relation name="relation10" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Expression4.in&quot;,x=870.0,y=-55.0}, tail={id=&quot;InteractiveShell2.output&quot;,x=680.0,y=-55.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;ThreadedComposite.output&quot;,x=400.0,y=-405.0}, tail={id=&quot;Expression2.in&quot;,x=595.0,y=-335.0}, points={510.0,-405.0,510.0,-335.0} } }">
             </property>
         </relation>
         <relation name="relation" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;TimeDelay.input&quot;,x=1025.0,y=-55.0}, tail={id=&quot;Expression4.output&quot;,x=870.0,y=-55.0}, points={} } }">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;WarningMessage.output&quot;,x=150.0,y=-210.0}, tail={id=&quot;ThreadedComposite2.input&quot;,x=395.0,y=-210.0}, points={} } }">
             </property>
         </relation>
         <relation name="relation2" class="ptolemy.actor.TypedIORelation">
-            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;WarningMessage.in&quot;,x=410.0,y=-65.0}, tail={id=&quot;FSMActor.alarm&quot;,x=135.0,y=-65.0}, points={} } }">
+            <vertex name="vertex1" value="{-35.0, -290.0}">
+            </vertex>
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;FSMActor.alarm&quot;,x=935.0,y=-220.0}, tail={id=&quot;relation2.vertex1&quot;,x=-35.0,y=-290.0}, points={1035.0,-230.0,1035.0,-370.0,-35.0,-370.0} },{ head={id=&quot;TimeDelay2.input&quot;,x=150.0,y=-290.0}, tail={id=&quot;relation2.vertex1&quot;,x=-35.0,y=-290.0}, points={} },{ head={id=&quot;WarningMessage.in&quot;,x=150.0,y=-210.0}, tail={id=&quot;relation2.vertex1&quot;,x=-35.0,y=-290.0}, points={-35.0,-210.0} } }">
+            </property>
+        </relation>
+        <relation name="relation10" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;TimeDelay2.output&quot;,x=150.0,y=-290.0}, tail={id=&quot;Expression3.in&quot;,x=595.0,y=-290.0}, points={} } }">
             </property>
         </relation>
         <link port="activity" relation="relation4"/>
         <link port="FSMActor.activity" relation="relation4"/>
-        <link port="FSMActor.user_input" relation="relation3"/>
+        <link port="FSMActor.userInput" relation="relation3"/>
         <link port="FSMActor.alarm" relation="relation2"/>
-        <link port="TimeDelay.input" relation="relation"/>
-        <link port="TimeDelay.output" relation="relation3"/>
-        <link port="WarningMessage.output" relation="relation8"/>
+        <link port="FSMActor.emergency" relation="relation7"/>
+        <link port="WarningMessage.output" relation="relation"/>
         <link port="WarningMessage.in" relation="relation2"/>
-        <link port="InteractiveShell2.input" relation="relation8"/>
-        <link port="InteractiveShell2.output" relation="relation10"/>
-        <link port="Expression4.output" relation="relation"/>
-        <link port="Expression4.in" relation="relation10"/>
+        <link port="TimeDelay.input" relation="relation5"/>
+        <link port="TimeDelay.output" relation="relation3"/>
+        <link port="Expression4.output" relation="relation5"/>
+        <link port="Expression4.in" relation="relation9"/>
+        <link port="Expression.output" relation="relation6"/>
+        <link port="Expression.in" relation="relation7"/>
+        <link port="ThreadedComposite2.input" relation="relation"/>
+        <link port="ThreadedComposite2.output" relation="relation9"/>
+        <link port="ThreadedComposite.input" relation="relation6"/>
+        <link port="ThreadedComposite.output" relation="relation8"/>
+        <link port="Expression2.output" relation="relation5"/>
+        <link port="Expression2.in" relation="relation8"/>
+        <link port="TimeDelay2.input" relation="relation2"/>
+        <link port="TimeDelay2.output" relation="relation10"/>
+        <link port="Expression3.output" relation="relation5"/>
+        <link port="Expression3.in" relation="relation10"/>
+    </entity>
+    <entity name="ActivityDetectionFSM" class="ptolemy.domains.modal.kernel.FSMActor">
+        <property name="_library" class="ptolemy.moml.LibraryAttribute">
+            <configure>
+    <entity name="StateLibrary" class="ptolemy.kernel.CompositeEntity"><input source="ptolemy/configs/basicUtilities.xml"></input><entity name="State" class="ptolemy.domains.modal.kernel.State"><property name="_centerName" class="ptolemy.kernel.util.Attribute"></property></entity></entity>
+  </configure>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{1200.0, 250.0}">
+        </property>
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={610, 392, 939, 656}, maximized=false}">
+        </property>
+        <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 510]">
+        </property>
+        <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.8000000000000007">
+        </property>
+        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{643.944087009804, 208.96147365196072}">
+        </property>
+        <property name="confirmationTimeout" class="ptolemy.data.expr.Parameter" value="5">
+            <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+                <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+                </property>
+            </property>
+            <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+                <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+            </property>
+            <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{230.0, 20.0}">
+            </property>
+        </property>
+        <property name="fallDetectTimer" class="ptolemy.data.expr.Parameter" value="5">
+            <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+                <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+                </property>
+            </property>
+            <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+                <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+            </property>
+            <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{115.0, 20.0}">
+            </property>
+        </property>
+        <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+            <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 0.0, 1.0}">
+            </property>
+            <property name="text" class="ptolemy.kernel.util.StringAttribute" value="The FSM uses a &quot;pre-fall&quot; state to verify a fall and avoid false alarms.&#10;After the first fall signal, it enters this state and waits for a specific&#10;number of additional fall signals before confirming.&#10;If not enough signals are received, it resets. The number of required signals &#10;must be balanced: too high, and real falls are missed; too low, and false &#10;alarms increase.">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{370.0, 10.0}">
+            </property>
+        </property>
+        <port name="isWalking" class="ptolemy.domains.modal.modal.RefinementPort">
+            <property name="input"/>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter" value="">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{25.0, 225.0}">
+            </property>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
+            </property>
+        </port>
+        <port name="isJogging" class="ptolemy.domains.modal.modal.RefinementPort">
+            <property name="input"/>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter" value="">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{25.0, 295.0}">
+            </property>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
+            </property>
+        </port>
+        <port name="activity" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{1360.0, 295.0}">
+            </property>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="isFall" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{25.0, 360.0}">
+            </property>
+            <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
+            </property>
+        </port>
+        <entity name="walking" class="ptolemy.domains.modal.kernel.State">
+            <property name="isInitialState" class="ptolemy.data.expr.Parameter" value="true">
+            </property>
+            <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{740.0, 155.0}">
+            </property>
+        </entity>
+        <entity name="jogging" class="ptolemy.domains.modal.kernel.State">
+            <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{615.0, 540.0}">
+            </property>
+        </entity>
+        <entity name="fall" class="ptolemy.domains.modal.kernel.State">
+            <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{615.0, 410.0}">
+            </property>
+        </entity>
+        <entity name="prefall" class="ptolemy.domains.modal.kernel.State">
+            <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{350.0, 290.0}">
+            </property>
+        </entity>
+        <relation name="relation" class="ptolemy.domains.modal.kernel.Transition">
+            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="isJogging">
+            </property>
+            <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="activity = &quot;walking to jogging&quot;">
+            </property>
+            <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.015654785739889654">
+            </property>
+            <property name="gamma" class="ptolemy.data.expr.Parameter" value="0.6658852663987522">
+            </property>
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;jogging._location&quot;,x=615.0,y=540.0}, tail={id=&quot;walking._location&quot;,x=740.0,y=155.0}, points={635.7448120117188,519.7291870117188,635.7448120117188,522.2291870117188,635.7448120117188,520.5625,635.7448120117188,518.8958129882812,635.7448120117188,513.0625,716.9426879882812,510.1458435058594,798.140625,507.2291564941406,960.5364379882812,507.2291564941406,1041.734375,503.0625,1122.9323120117188,498.8958435058594,1122.9323120117188,490.5625,1122.9323120117188,482.4921875,1122.9323120117188,474.421875,1122.9323120117188,466.6145935058594,1122.9323120117188,458.8072814941406,1122.9323120117188,451.0,1122.9323120117188,443.1927185058594,1122.9323120117188,429.1224060058594,1122.9323120117188,415.0520935058594,1122.9323120117188,394.71875,1122.9323120117188,379.8046875,1122.9323120117188,364.890625,1122.9323120117188,355.3958435058594,1122.9323120117188,345.9010314941406,1122.9323120117188,336.40625,1122.9323120117188,326.9114685058594,1122.9323120117188,309.88629150390625,1122.9323120117188,292.8611145019531,1122.9323120117188,268.3055419921875,1122.9323120117188,253.37413024902344,1122.9323120117188,238.4427032470703,1122.9323120117188,233.1354217529297,1122.9323120117188,227.828125,1122.9323120117188,222.5208282470703,1122.9323120117188,217.2135467529297,1122.9323120117188,210.3932342529297,1122.9323120117188,203.5729217529297,1122.9323120117188,195.2395782470703,1062.626708984375,191.0729217529297,1002.3211669921875,186.90625,881.7100830078125,186.90625,821.404541015625,183.9895782470703,761.0989379882812,181.0729217529297,761.0989379882812,175.2395782470703,761.0989379882812,173.5729217529297,761.0989379882812,171.90625,761.0989379882812,174.40625}, labelLocation={x=1126.9323120117188,y=342.4791564941406} } }">
+            </property>
+        </relation>
+        <relation name="relation2" class="ptolemy.domains.modal.kernel.Transition">
+            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="isWalking">
+            </property>
+            <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="activity = &quot;jogging to walking&quot;">
+            </property>
+            <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.6283185307179586">
+            </property>
+            <property name="gamma" class="ptolemy.data.expr.Parameter" value="-2.6840551522727183">
+            </property>
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;walking._location&quot;,x=740.0,y=155.0}, tail={id=&quot;jogging._location&quot;,x=615.0,y=540.0}, points={749.765625,174.40625,749.765625,171.90625,749.765625,174.8229217529297,749.765625,177.7395782470703,749.765625,186.0729217529297,778.1683959960938,190.2395782470703,806.5711669921875,194.40625,863.376708984375,194.40625,891.779541015625,197.3229217529297,920.1823120117188,200.2395782470703,920.1823120117188,206.0729217529297,920.1823120117188,211.6432342529297,920.1823120117188,217.2135467529297,920.1823120117188,222.5208282470703,920.1823120117188,227.828125,920.1823120117188,233.1354217529297,920.1823120117188,238.4427032470703,920.1823120117188,253.37413024902344,920.1823120117188,268.3055419921875,920.1823120117188,292.8611145019531,920.1823120117188,309.88629150390625,920.1823120117188,326.9114685058594,920.1823120117188,336.40625,920.1823120117188,345.9010314941406,920.1823120117188,355.3958435058594,920.1823120117188,364.890625,920.1823120117188,379.8046875,920.1823120117188,394.71875,920.1823120117188,415.0520935058594,920.1823120117188,429.1224060058594,920.1823120117188,443.1927185058594,920.1823120117188,451.0,920.1823120117188,458.8072814941406,920.1823120117188,466.6145935058594,920.1823120117188,474.421875,920.1823120117188,481.2421875,920.1823120117188,488.0625,920.1823120117188,493.8958435058594,870.9426879882812,496.8125,821.703125,499.7291564941406,723.2239379882812,499.7291564941406,673.984375,503.8958435058594,624.7448120117188,508.0625,624.7448120117188,516.3958129882812,624.7448120117188,519.3125,624.7448120117188,522.2291870117188,624.7448120117188,519.7291870117188}, labelLocation={x=924.1823120117188,y=211.90625} } }">
+            </property>
+        </relation>
+        <relation name="relation5" class="ptolemy.domains.modal.kernel.Transition">
+            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="isWalking">
+            </property>
+            <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="activity = &quot;fall to walking&quot;">
+            </property>
+            <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.011270297306885262">
+            </property>
+            <property name="gamma" class="ptolemy.data.expr.Parameter" value="-1.6278766957199438">
+            </property>
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;walking._location&quot;,x=740.0,y=155.0}, tail={id=&quot;fall._location&quot;,x=615.0,y=410.0}, points={738.4323120117188,174.40625,738.4323120117188,176.90625,738.4323120117188,183.5182342529297,738.4323120117188,190.1302032470703,738.4323120117188,200.8541717529297,738.4323120117188,211.578125,738.4323120117188,222.3020782470703,738.4323120117188,233.0260467529297,738.4323120117188,250.66580200195312,738.4323120117188,268.3055419921875,738.4323120117188,292.8611145019531,738.4323120117188,309.0529479980469,738.4323120117188,325.2447814941406,738.4323120117188,333.0729064941406,738.4323120117188,340.9010314941406,738.4323120117188,348.7291564941406,738.4323120117188,356.5572814941406,738.4323120117188,363.3880310058594,738.4323120117188,370.21875,738.4323120117188,376.0520935058594,718.6510620117188,378.96875,698.8698120117188,381.8854064941406,659.3073120117188,381.8854064941406,639.5260620117188,384.8020935058594,619.7448120117188,387.71875,619.7448120117188,393.5520935058594,619.7448120117188,395.21875,619.7448120117188,396.8854064941406,619.7448120117188,394.3854064941406}, labelLocation={x=742.4323120117188,y=277.1614685058594} } }">
+            </property>
+        </relation>
+        <relation name="relation7" class="ptolemy.domains.modal.kernel.Transition">
+            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="isJogging">
+            </property>
+            <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="activity = &quot;fall to jogging&quot;">
+            </property>
+            <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.6283185307179586">
+            </property>
+            <property name="gamma" class="ptolemy.data.expr.Parameter" value="-0.03318878600630095">
+            </property>
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;jogging._location&quot;,x=615.0,y=540.0}, tail={id=&quot;fall._location&quot;,x=615.0,y=410.0}, points={613.7447814941406,519.7291870117188,613.7447814941406,505.9791564941406,613.7447814941406,494.3671875,613.7447814941406,482.7552185058594,613.7447814941406,473.28125,613.7447814941406,463.8072814941406,613.7447814941406,454.3333435058594,613.7447814941406,444.859375,613.7447814941406,438.8724060058594,613.7447814941406,432.8854064941406,613.7447814941406,430.3854064941406}, labelLocation={x=617.7448120117188,y=460.3854064941406} } }">
+            </property>
+        </relation>
+        <relation name="relation6" class="ptolemy.domains.modal.kernel.Transition">
+            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="isFall">
+            </property>
+            <property name="setActions" class="ptolemy.domains.modal.kernel.CommitActionsAttribute" value="fallDetectTimer = 1">
+            </property>
+            <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.6283185307179586">
+            </property>
+            <property name="gamma" class="ptolemy.data.expr.Parameter" value="3.141592653589793">
+            </property>
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;prefall._location&quot;,x=350.0,y=290.0}, tail={id=&quot;walking._location&quot;,x=740.0,y=155.0}, points={340.3177032470703,268.75,340.3177032470703,268.75,340.3177032470703,265.8333435058594,340.3177032470703,262.9166564941406,340.3177032470703,257.0833435058594,329.9783020019531,254.1666717529297,319.6388854980469,251.25,298.96006774902344,251.25,288.62066650390625,248.3333282470703,278.28125,245.4166717529297,278.28125,239.5833282470703,278.28125,234.8463592529297,278.28125,230.109375,278.28125,226.46875,278.28125,222.828125,278.28125,219.1875,278.28125,215.546875,278.28125,209.5598907470703,278.28125,203.5729217529297,278.28125,195.2395782470703,351.1953125,191.0729217529297,424.109375,186.90625,569.9375,186.90625,642.8515625,183.9895782470703,715.765625,181.0729217529297,715.765625,175.2395782470703,715.765625,173.5729217529297,715.765625,171.90625,715.765625,174.40625}, labelLocation={x=282.28125,y=212.8984375} } }">
+            </property>
+        </relation>
+        <relation name="relation8" class="ptolemy.domains.modal.kernel.Transition">
+            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="fallDetectTimer == confirmationTimeout">
+            </property>
+            <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="activity = &quot;fall&quot;">
+            </property>
+            <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.6283185307179586">
+            </property>
+            <property name="gamma" class="ptolemy.data.expr.Parameter" value="1.094364606586371">
+            </property>
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;fall._location&quot;,x=615.0,y=410.0}, tail={id=&quot;prefall._location&quot;,x=350.0,y=290.0}, points={607.7447814941406,394.3854064941406,607.7447814941406,396.8854064941406,607.7447814941406,395.21875,607.7447814941406,393.5520935058594,607.7447814941406,387.71875,587.4635314941406,384.8020935058594,567.1822814941406,381.8854064941406,526.6197814941406,381.8854064941406,506.3385314941406,378.96875,486.0572814941406,376.0520935058594,486.0572814941406,370.21875,486.0572814941406,365.4713439941406,486.0572814941406,360.7239685058594,486.0572814941406,357.0625,486.0572814941406,353.4010314941406,486.0572814941406,349.7395935058594,486.0572814941406,346.078125,486.0572814941406,341.3307189941406,486.0572814941406,336.5833435058594,486.0572814941406,330.75,465.65625,327.8333435058594,445.2552185058594,324.9166564941406,404.453125,324.9166564941406,384.0520935058594,322.0,363.6510314941406,319.0833435058594,363.6510314941406,313.25,363.6510314941406,310.3333435058594,363.6510314941406,307.4166564941406,363.6510314941406,307.4166564941406}, labelLocation={x=490.0572814941406,y=342.4166564941406} } }">
+            </property>
+        </relation>
+        <relation name="relation9" class="ptolemy.domains.modal.kernel.Transition">
+            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="isFall">
+            </property>
+            <property name="setActions" class="ptolemy.domains.modal.kernel.CommitActionsAttribute" value="fallDetectTimer = fallDetectTimer + 1">
+            </property>
+            <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="2.966022118929854">
+            </property>
+            <property name="gamma" class="ptolemy.data.expr.Parameter" value="1.6353330785034323">
+            </property>
+            <property name="immediate" class="ptolemy.data.expr.Parameter" value="false">
+            </property>
+            <property name="error" class="ptolemy.data.expr.Parameter" value="false">
+            </property>
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;prefall._location&quot;,x=350.0,y=290.0}, tail={id=&quot;prefall._location&quot;,x=350.0,y=290.0}, points={306.6510467529297,283.75,304.484375,285.9166564941406,304.484375,288.0833435058594,304.484375,290.25,306.6510467529297,292.4166564941406}, labelLocation={x=110.078125,y=278.1536560058594} } }">
+            </property>
+        </relation>
+        <relation name="relation3" class="ptolemy.domains.modal.kernel.Transition">
+            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="isFall">
+            </property>
+            <property name="setActions" class="ptolemy.domains.modal.kernel.CommitActionsAttribute" value="fallDetectTimer = 1">
+            </property>
+            <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.6283185307179586">
+            </property>
+            <property name="gamma" class="ptolemy.data.expr.Parameter" value="-2.8925700523103335">
+            </property>
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;prefall._location&quot;,x=350.0,y=290.0}, tail={id=&quot;jogging._location&quot;,x=615.0,y=540.0}, points={349.6510467529297,307.4166564941406,349.6510467529297,312.4166564941406,349.6510467529297,319.6640625,349.6510467529297,326.9114685058594,349.6510467529297,336.40625,349.6510467529297,345.9010314941406,349.6510467529297,355.3958435058594,349.6510467529297,364.890625,349.6510467529297,379.8046875,349.6510467529297,394.71875,349.6510467529297,415.0520935058594,349.6510467529297,429.1224060058594,349.6510467529297,443.1927185058594,349.6510467529297,451.0,349.6510467529297,458.8072814941406,349.6510467529297,466.6145935058594,349.6510467529297,474.421875,349.6510467529297,481.2421875,349.6510467529297,488.0625,349.6510467529297,493.8958435058594,391.8333435058594,496.8125,434.015625,499.7291564941406,518.3802185058594,499.7291564941406,560.5625,503.8958435058594,602.7447814941406,508.0625,602.7447814941406,516.3958129882812,602.7447814941406,519.3125,602.7447814941406,522.2291870117188,602.7447814941406,519.7291870117188}, labelLocation={x=353.6510467529297,y=343.4713439941406} } }">
+            </property>
+        </relation>
+        <relation name="relation4" class="ptolemy.domains.modal.kernel.Transition">
+            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="isWalking">
+            </property>
+            <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="activity = &quot;prefall to walk&quot;">
+            </property>
+            <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.6283185307179586">
+            </property>
+            <property name="gamma" class="ptolemy.data.expr.Parameter" value="-1.0087243764912097">
+            </property>
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;walking._location&quot;,x=740.0,y=155.0}, tail={id=&quot;prefall._location&quot;,x=350.0,y=290.0}, points={727.0989379882812,174.40625,727.0989379882812,171.90625,727.0989379882812,174.8229217529297,727.0989379882812,177.7395782470703,727.0989379882812,186.0729217529297,675.0303955078125,190.2395782470703,622.9617919921875,194.40625,518.8246459960938,194.40625,466.7560729980469,197.3229217529297,414.6875,200.2395782470703,414.6875,206.0729217529297,414.6875,210.8098907470703,414.6875,215.546875,414.6875,219.1875,414.6875,222.828125,414.6875,226.46875,414.6875,230.109375,414.6875,234.8463592529297,414.6875,239.5833282470703,414.6875,245.4166717529297,405.4036560058594,248.3333282470703,396.1197814941406,251.25,377.5520935058594,251.25,368.2682189941406,254.1666717529297,358.984375,257.0833435058594,358.984375,262.9166564941406,358.984375,265.8333435058594,358.984375,268.75,358.984375,268.75}, labelLocation={x=418.6875,y=211.90625} } }">
+            </property>
+        </relation>
+        <relation name="relation10" class="ptolemy.domains.modal.kernel.Transition">
+            <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="isJogging">
+            </property>
+            <property name="outputActions" class="ptolemy.domains.modal.kernel.OutputActionsAttribute" value="activity = &quot;prefall to jogging&quot;">
+            </property>
+            <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.6283185307179586">
+            </property>
+            <property name="gamma" class="ptolemy.data.expr.Parameter" value="0.2005103663176556">
+            </property>
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;jogging._location&quot;,x=615.0,y=540.0}, tail={id=&quot;prefall._location&quot;,x=350.0,y=290.0}, points={591.7447814941406,519.7291870117188,591.7447814941406,522.2291870117188,591.7447814941406,520.5625,591.7447814941406,518.8958129882812,591.7447814941406,513.0625,518.4375,510.1458435058594,445.1302185058594,507.2291564941406,298.515625,507.2291564941406,225.20833587646484,503.0625,151.90104293823242,498.8958435058594,151.90104293823242,490.5625,151.90104293823242,482.4921875,151.90104293823242,474.421875,151.90104293823242,466.6145935058594,151.90104293823242,458.8072814941406,151.90104293823242,451.0,151.90104293823242,443.1927185058594,151.90104293823242,429.1224060058594,151.90104293823242,415.0520935058594,151.90104293823242,394.71875,151.90104293823242,381.8880310058594,151.90104293823242,369.0572814941406,151.90104293823242,363.7291564941406,151.90104293823242,358.4010314941406,151.90104293823242,353.0729064941406,151.90104293823242,347.7447814941406,151.90104293823242,342.1640625,151.90104293823242,336.5833435058594,151.90104293823242,330.75,182.52603912353516,327.8333435058594,213.15103912353516,324.9166564941406,274.4010467529297,324.9166564941406,305.0260467529297,322.0,335.6510467529297,319.0833435058594,335.6510467529297,313.25,335.6510467529297,310.3333435058594,335.6510467529297,307.4166564941406,335.6510467529297,307.4166564941406}, labelLocation={x=155.90104293823242,y=401.4635314941406} } }">
+            </property>
+        </relation>
+        <link port="walking.incomingPort" relation="relation2"/>
+        <link port="walking.incomingPort" relation="relation5"/>
+        <link port="walking.incomingPort" relation="relation4"/>
+        <link port="walking.outgoingPort" relation="relation"/>
+        <link port="walking.outgoingPort" relation="relation6"/>
+        <link port="jogging.incomingPort" relation="relation"/>
+        <link port="jogging.incomingPort" relation="relation7"/>
+        <link port="jogging.incomingPort" relation="relation10"/>
+        <link port="jogging.outgoingPort" relation="relation2"/>
+        <link port="jogging.outgoingPort" relation="relation3"/>
+        <link port="fall.incomingPort" relation="relation8"/>
+        <link port="fall.outgoingPort" relation="relation5"/>
+        <link port="fall.outgoingPort" relation="relation7"/>
+        <link port="prefall.incomingPort" relation="relation6"/>
+        <link port="prefall.incomingPort" relation="relation9"/>
+        <link port="prefall.incomingPort" relation="relation3"/>
+        <link port="prefall.outgoingPort" relation="relation8"/>
+        <link port="prefall.outgoingPort" relation="relation9"/>
+        <link port="prefall.outgoingPort" relation="relation4"/>
+        <link port="prefall.outgoingPort" relation="relation10"/>
+    </entity>
+    <entity name="label" class="ptolemy.actor.lib.RecordDisassembler">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{455.0, 45.0}">
+        </property>
+        <port name="label" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="LabelDisplay" class="ptolemy.actor.lib.gui.Display">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={50, 500, 374, 273}, maximized=false}">
+        </property>
+        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[352, 186]">
+        </property>
+        <property name="suppressBlankLines" class="ptolemy.data.expr.Parameter" value="false">
+        </property>
+        <property name="title" class="ptolemy.data.expr.StringParameter" value="True label">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{585.0, 65.0}">
+        </property>
+    </entity>
+    <entity name="GuardsCalculator" class="ptolemy.actor.TypedCompositeActor">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{1015.0, 250.0}">
+        </property>
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={560, 537, 939, 656}, maximized=false}">
+        </property>
+        <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 510]">
+        </property>
+        <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0">
+        </property>
+        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{347.0, 420.875}">
+        </property>
+        <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+            <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 0.0, 1.0}">
+            </property>
+            <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Evaluates the guard conditions for the Activity Recognition Finite State Machine (FSM) ">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{-5.0, -15.0}">
+            </property>
+        </property>
+        <port name="angle_pitch" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{15.0, 45.0}">
+            </property>
+        </port>
+        <port name="acceleration" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{15.0, 100.0}">
+            </property>
+        </port>
+        <port name="rotationrate" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{20.0, 155.0}">
+            </property>
+        </port>
+        <port name="isWalking" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{600.0, 65.0}">
+            </property>
+            <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
+            </property>
+        </port>
+        <port name="isJogging" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{600.0, 220.0}">
+            </property>
+            <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
+            </property>
+        </port>
+        <port name="isFall" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{600.0, 145.0}">
+            </property>
+            <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
+            </property>
+        </port>
+        <entity name="isWalking" class="ptolemy.actor.lib.Expression">
+            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="angle_pitch &gt; 37.14 &amp;&amp; angle_pitch &lt;= 65.39 &amp;&amp; acceleration &gt; 11.54 &amp;&amp; rotationrate &lt;= 2.21&#10;  || angle_pitch &gt; 65.39 &amp;&amp; acceleration &gt; 11.54 &amp;&amp; rotationrate &lt;= 2.21">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+                </property>
+                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                </property>
+                <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+                </property>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{380.0, 65.0}">
+            </property>
+            <port name="output" class="ptolemy.actor.TypedIOPort">
+                <property name="output"/>
+                <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
+                </property>
+            </port>
+            <port name="angle_pitch" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+            <port name="acceleration" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+            <port name="rotationrate" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+        </entity>
+        <entity name="isJogging" class="ptolemy.actor.lib.Expression">
+            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="  angle_pitch &lt;= 11.24 &amp;&amp; acceleration &lt;= 11.54&#10;  || angle_pitch &gt; 11.24 &amp;&amp; angle_pitch &lt;= 18.71 &amp;&amp; acceleration &gt; 11.54&#10;">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+                </property>
+                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                </property>
+                <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+                </property>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{375.0, 220.0}">
+            </property>
+            <port name="output" class="ptolemy.actor.TypedIOPort">
+                <property name="output"/>
+                <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
+                </property>
+            </port>
+            <port name="angle_pitch" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+            <port name="acceleration" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+            <port name="rotationrate" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+        </entity>
+        <entity name="isFall" class="ptolemy.actor.lib.Expression">
+            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="  angle_pitch &gt; 11.24 &amp;&amp; angle_pitch &lt;= 37.14 &amp;&amp; acceleration &lt;= 11.54&#10;  || angle_pitch &gt; 18.71 &amp;&amp; angle_pitch &lt;= 37.14 &amp;&amp; acceleration &gt; 11.54&#10;  || angle_pitch &gt; 65.39 &amp;&amp; acceleration &gt; 11.54 &amp;&amp; acceleration &lt;= 13.38 &amp;&amp; rotationrate &gt; 2.21&#10;  || angle_pitch &gt; 65.39 &amp;&amp; acceleration &gt; 13.38 &amp;&amp; rotationrate &gt; 2.21&#10;">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+                </property>
+                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                </property>
+                <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+                </property>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{375.0, 145.0}">
+            </property>
+            <port name="output" class="ptolemy.actor.TypedIOPort">
+                <property name="output"/>
+                <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
+                </property>
+            </port>
+            <port name="angle_pitch" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+            <port name="acceleration" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+            <port name="rotationrate" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+        </entity>
+        <relation name="relation2" class="ptolemy.actor.TypedIORelation">
+            <vertex name="vertex1" value="{105.0, 100.0}">
+            </vertex>
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;acceleration._location&quot;,x=15.0,y=100.0}, tail={id=&quot;relation2.vertex1&quot;,x=105.0,y=100.0}, points={} },{ head={id=&quot;isWalking.acceleration&quot;,x=380.0,y=65.0}, tail={id=&quot;relation2.vertex1&quot;,x=105.0,y=100.0}, points={105.0,65.0} },{ head={id=&quot;isJogging.acceleration&quot;,x=375.0,y=220.0}, tail={id=&quot;relation2.vertex1&quot;,x=105.0,y=100.0}, points={105.0,220.0} },{ head={id=&quot;isFall.acceleration&quot;,x=375.0,y=145.0}, tail={id=&quot;relation2.vertex1&quot;,x=105.0,y=100.0}, points={105.0,145.0} } }">
+            </property>
+        </relation>
+        <relation name="relation3" class="ptolemy.actor.TypedIORelation">
+            <vertex name="vertex1" value="{120.0, 155.0}">
+            </vertex>
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;rotationrate._location&quot;,x=20.0,y=155.0}, tail={id=&quot;relation3.vertex1&quot;,x=120.0,y=155.0}, points={} },{ head={id=&quot;isWalking.rotationrate&quot;,x=380.0,y=65.0}, tail={id=&quot;relation3.vertex1&quot;,x=120.0,y=155.0}, points={120.0,75.0} },{ head={id=&quot;isJogging.rotationrate&quot;,x=375.0,y=220.0}, tail={id=&quot;relation3.vertex1&quot;,x=120.0,y=155.0}, points={120.0,230.0} },{ head={id=&quot;isFall.rotationrate&quot;,x=375.0,y=145.0}, tail={id=&quot;relation3.vertex1&quot;,x=120.0,y=155.0}, points={} } }">
+            </property>
+        </relation>
+        <relation name="relation4" class="ptolemy.actor.TypedIORelation">
+            <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+            </property>
+            <vertex name="vertex1" value="{135.0, 45.0}">
+            </vertex>
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;isWalking.angle_pitch&quot;,x=380.0,y=65.0}, tail={id=&quot;relation4.vertex1&quot;,x=135.0,y=45.0}, points={135.0,55.0} },{ head={id=&quot;isJogging.angle_pitch&quot;,x=375.0,y=220.0}, tail={id=&quot;relation4.vertex1&quot;,x=135.0,y=45.0}, points={135.0,210.0} },{ head={id=&quot;angle_pitch._location&quot;,x=15.0,y=45.0}, tail={id=&quot;relation4.vertex1&quot;,x=135.0,y=45.0}, points={} },{ head={id=&quot;isFall.angle_pitch&quot;,x=375.0,y=145.0}, tail={id=&quot;relation4.vertex1&quot;,x=135.0,y=45.0}, points={135.0,135.0} } }">
+            </property>
+        </relation>
+        <relation name="relation" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;isWalking._location&quot;,x=600.0,y=65.0}, tail={id=&quot;isWalking.output&quot;,x=380.0,y=65.0}, points={} } }">
+            </property>
+        </relation>
+        <relation name="relation5" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;isJogging._location&quot;,x=600.0,y=220.0}, tail={id=&quot;isJogging.output&quot;,x=375.0,y=220.0}, points={} } }">
+            </property>
+        </relation>
+        <relation name="relation6" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;isFall._location&quot;,x=600.0,y=145.0}, tail={id=&quot;isFall.output&quot;,x=375.0,y=145.0}, points={} } }">
+            </property>
+        </relation>
+        <link port="angle_pitch" relation="relation4"/>
+        <link port="acceleration" relation="relation2"/>
+        <link port="rotationrate" relation="relation3"/>
+        <link port="isWalking" relation="relation"/>
+        <link port="isJogging" relation="relation5"/>
+        <link port="isFall" relation="relation6"/>
+        <link port="isWalking.output" relation="relation"/>
+        <link port="isWalking.angle_pitch" relation="relation4"/>
+        <link port="isWalking.acceleration" relation="relation2"/>
+        <link port="isWalking.rotationrate" relation="relation3"/>
+        <link port="isJogging.output" relation="relation5"/>
+        <link port="isJogging.angle_pitch" relation="relation4"/>
+        <link port="isJogging.acceleration" relation="relation2"/>
+        <link port="isJogging.rotationrate" relation="relation3"/>
+        <link port="isFall.output" relation="relation6"/>
+        <link port="isFall.angle_pitch" relation="relation4"/>
+        <link port="isFall.acceleration" relation="relation2"/>
+        <link port="isFall.rotationrate" relation="relation3"/>
     </entity>
     <relation name="relation2" class="ptolemy.actor.TypedIORelation">
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;CSVReader.endOfFile&quot;,x=230.0,y=220.0}, tail={id=&quot;Stop.input&quot;,x=370.0,y=250.0}, points={320.0,230.0,320.0,250.0} } }">
-        </property>
-    </relation>
-    <relation name="relation3" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{400.0, 210.0}">
+        <vertex name="vertex1" value="{400.0, 170.0}">
         </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;label.input&quot;,x=455.0,y=190.0}, tail={id=&quot;relation3.vertex1&quot;,x=400.0,y=210.0}, points={} },{ head={id=&quot;CSVReader.output&quot;,x=230.0,y=220.0}, tail={id=&quot;relation3.vertex1&quot;,x=400.0,y=210.0}, points={} },{ head={id=&quot;gyroscope.input&quot;,x=445.0,y=275.0}, tail={id=&quot;relation3.vertex1&quot;,x=400.0,y=210.0}, points={400.0,295.0} },{ head={id=&quot;accelerometer.input&quot;,x=430.0,y=110.0}, tail={id=&quot;relation3.vertex1&quot;,x=400.0,y=210.0}, points={400.0,130.0} } }">
-        </property>
-    </relation>
-    <relation name="relation10" class="ptolemy.actor.TypedIORelation">
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;label.label&quot;,x=455.0,y=190.0}, tail={id=&quot;LabelDisplay.input&quot;,x=580.0,y=210.0}, points={} } }">
-        </property>
-    </relation>
-    <relation name="relation4" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{675.0, 65.0}">
-        </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;accelerometer.accel_x_list&quot;,x=430.0,y=110.0}, tail={id=&quot;relation4.vertex1&quot;,x=675.0,y=65.0}, points={530.0,120.0,530.0,65.0} },{ head={id=&quot;AccelerationComputer.acc_x&quot;,x=770.0,y=75.0}, tail={id=&quot;relation4.vertex1&quot;,x=675.0,y=65.0}, points={} },{ head={id=&quot;AnglePitchComputer.acc_x&quot;,x=775.0,y=140.0}, tail={id=&quot;relation4.vertex1&quot;,x=675.0,y=65.0}, points={675.0,120.0} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyroscope.input&quot;,x=450.0,y=245.0}, tail={id=&quot;relation2.vertex1&quot;,x=400.0,y=170.0}, points={400.0,265.0} },{ head={id=&quot;label.input&quot;,x=455.0,y=45.0}, tail={id=&quot;relation2.vertex1&quot;,x=400.0,y=170.0}, points={400.0,65.0} },{ head={id=&quot;accelerometer.input&quot;,x=430.0,y=150.0}, tail={id=&quot;relation2.vertex1&quot;,x=400.0,y=170.0}, points={} },{ head={id=&quot;CSVSignalReader.output&quot;,x=225.0,y=180.0}, tail={id=&quot;relation2.vertex1&quot;,x=400.0,y=170.0}, points={} } }">
         </property>
     </relation>
     <relation name="relation5" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{645.0, 130.0}">
+        <vertex name="vertex1" value="{645.0, 170.0}">
         </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;accelerometer.accel_y_list&quot;,x=430.0,y=110.0}, tail={id=&quot;relation5.vertex1&quot;,x=645.0,y=130.0}, points={} },{ head={id=&quot;AccelerationComputer.acc_y&quot;,x=770.0,y=75.0}, tail={id=&quot;relation5.vertex1&quot;,x=645.0,y=130.0}, points={645.0,75.0} },{ head={id=&quot;AnglePitchComputer.acc_y&quot;,x=775.0,y=140.0}, tail={id=&quot;relation5.vertex1&quot;,x=645.0,y=130.0}, points={} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;AccelerationComputer.acc_y&quot;,x=755.0,y=115.0}, tail={id=&quot;relation5.vertex1&quot;,x=645.0,y=170.0}, points={645.0,115.0} },{ head={id=&quot;AnglePitchComputer.acc_y&quot;,x=760.0,y=180.0}, tail={id=&quot;relation5.vertex1&quot;,x=645.0,y=170.0}, points={} },{ head={id=&quot;accelerometer.accel_y_list&quot;,x=430.0,y=150.0}, tail={id=&quot;relation5.vertex1&quot;,x=645.0,y=170.0}, points={} } }">
         </property>
     </relation>
     <relation name="relation6" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{590.0, 160.0}">
+        <vertex name="vertex1" value="{590.0, 200.0}">
         </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;accelerometer.accel_z_list&quot;,x=430.0,y=110.0}, tail={id=&quot;relation6.vertex1&quot;,x=590.0,y=160.0}, points={530.0,140.0,530.0,160.0} },{ head={id=&quot;AccelerationComputer.acc_z&quot;,x=770.0,y=75.0}, tail={id=&quot;relation6.vertex1&quot;,x=590.0,y=160.0}, points={660.0,85.0,660.0,160.0} },{ head={id=&quot;AnglePitchComputer.acc_z&quot;,x=775.0,y=140.0}, tail={id=&quot;relation6.vertex1&quot;,x=590.0,y=160.0}, points={660.0,150.0,660.0,160.0} } }">
-        </property>
-    </relation>
-    <relation name="relation7" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{590.0, 265.0}">
-        </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyroscope.gyro_x_list&quot;,x=445.0,y=275.0}, tail={id=&quot;relation7.vertex1&quot;,x=590.0,y=265.0}, points={530.0,285.0,530.0,265.0} },{ head={id=&quot;RotationComputer.gyro_x&quot;,x=775.0,y=275.0}, tail={id=&quot;relation7.vertex1&quot;,x=590.0,y=265.0}, points={} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;AnglePitchComputer.acc_z&quot;,x=760.0,y=180.0}, tail={id=&quot;relation6.vertex1&quot;,x=590.0,y=200.0}, points={660.0,190.0,660.0,200.0} },{ head={id=&quot;AccelerationComputer.acc_z&quot;,x=755.0,y=115.0}, tail={id=&quot;relation6.vertex1&quot;,x=590.0,y=200.0}, points={660.0,125.0,660.0,200.0} },{ head={id=&quot;accelerometer.accel_z_list&quot;,x=430.0,y=150.0}, tail={id=&quot;relation6.vertex1&quot;,x=590.0,y=200.0}, points={535.0,180.0,535.0,200.0} } }">
         </property>
     </relation>
     <relation name="relation8" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{675.0, 295.0}">
+        <vertex name="vertex1" value="{590.0, 265.0}">
         </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyroscope.gyro_y_list&quot;,x=445.0,y=275.0}, tail={id=&quot;relation8.vertex1&quot;,x=675.0,y=295.0}, points={} },{ head={id=&quot;RotationComputer.gyro_y&quot;,x=775.0,y=275.0}, tail={id=&quot;relation8.vertex1&quot;,x=675.0,y=295.0}, points={675.0,275.0} },{ head={id=&quot;AnglePitchComputer.gyro_y&quot;,x=775.0,y=140.0}, tail={id=&quot;relation8.vertex1&quot;,x=675.0,y=295.0}, points={675.0,160.0} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyroscope.gyro_y_list&quot;,x=450.0,y=245.0}, tail={id=&quot;relation8.vertex1&quot;,x=590.0,y=265.0}, points={} },{ head={id=&quot;AnglePitchComputer.gyro_y&quot;,x=760.0,y=180.0}, tail={id=&quot;relation8.vertex1&quot;,x=590.0,y=265.0}, points={675.0,200.0,675.0,265.0} },{ head={id=&quot;RotationComputer.gyro_y&quot;,x=765.0,y=260.0}, tail={id=&quot;relation8.vertex1&quot;,x=590.0,y=265.0}, points={675.0,260.0,675.0,265.0} } }">
         </property>
     </relation>
-    <relation name="relation9" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{690.0, 320.0}">
+    <relation name="relation10" class="ptolemy.actor.TypedIORelation">
+        <vertex name="vertex1" value="{900.0, 260.0}">
         </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyroscope.gyro_z_list&quot;,x=445.0,y=275.0}, tail={id=&quot;relation9.vertex1&quot;,x=690.0,y=320.0}, points={530.0,305.0,530.0,320.0} },{ head={id=&quot;RotationComputer.gyro_z&quot;,x=775.0,y=275.0}, tail={id=&quot;relation9.vertex1&quot;,x=690.0,y=320.0}, points={690.0,285.0} } }">
-        </property>
-    </relation>
-    <relation name="relation11" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{915.0, 275.0}">
-        </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;RotationComputer.rotation_rate&quot;,x=775.0,y=275.0}, tail={id=&quot;relation11.vertex1&quot;,x=915.0,y=275.0}, points={} },{ head={id=&quot;RotationPlotter.input&quot;,x=980.0,y=275.0}, tail={id=&quot;relation11.vertex1&quot;,x=915.0,y=275.0}, points={} },{ head={id=&quot;ActivityDetectionFSM.rotationrate&quot;,x=1030.0,y=140.0}, tail={id=&quot;relation11.vertex1&quot;,x=915.0,y=275.0}, points={915.0,150.0} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;GuardsCalculator.rotationrate&quot;,x=1015.0,y=250.0}, tail={id=&quot;relation10.vertex1&quot;,x=900.0,y=260.0}, points={} },{ head={id=&quot;RotationComputer.rotation_rate&quot;,x=765.0,y=260.0}, tail={id=&quot;relation10.vertex1&quot;,x=900.0,y=260.0}, points={} },{ head={id=&quot;RotationPlotter.input&quot;,x=965.0,y=315.0}, tail={id=&quot;relation10.vertex1&quot;,x=900.0,y=260.0}, points={900.0,315.0} } }">
         </property>
     </relation>
     <relation name="relation12" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{915.0, 75.0}">
+        <vertex name="vertex1" value="{915.0, 180.0}">
         </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;AccelerationComputer.acceleration&quot;,x=770.0,y=75.0}, tail={id=&quot;relation12.vertex1&quot;,x=915.0,y=75.0}, points={} },{ head={id=&quot;AccelerationPlotter.input&quot;,x=980.0,y=75.0}, tail={id=&quot;relation12.vertex1&quot;,x=915.0,y=75.0}, points={} },{ head={id=&quot;ActivityDetectionFSM.angle_pitch&quot;,x=1030.0,y=140.0}, tail={id=&quot;relation12.vertex1&quot;,x=915.0,y=75.0}, points={915.0,130.0} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;AnglePitchComputer.angle_pitch&quot;,x=760.0,y=180.0}, tail={id=&quot;relation12.vertex1&quot;,x=915.0,y=180.0}, points={} },{ head={id=&quot;AnglePitchPlotter.input&quot;,x=965.0,y=180.0}, tail={id=&quot;relation12.vertex1&quot;,x=915.0,y=180.0}, points={} },{ head={id=&quot;GuardsCalculator.angle_pitch&quot;,x=1015.0,y=250.0}, tail={id=&quot;relation12.vertex1&quot;,x=915.0,y=180.0}, points={915.0,240.0} } }">
         </property>
     </relation>
     <relation name="relation13" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{930.0, 140.0}">
+        <vertex name="vertex1" value="{1330.0, 250.0}">
         </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;AnglePitchComputer.angle_pitch&quot;,x=775.0,y=140.0}, tail={id=&quot;relation13.vertex1&quot;,x=930.0,y=140.0}, points={} },{ head={id=&quot;AnglePitchPlotter.input&quot;,x=980.0,y=210.0}, tail={id=&quot;relation13.vertex1&quot;,x=930.0,y=140.0}, points={930.0,210.0} },{ head={id=&quot;ActivityDetectionFSM.acceleration&quot;,x=1030.0,y=140.0}, tail={id=&quot;relation13.vertex1&quot;,x=930.0,y=140.0}, points={} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;ActivityDetectionFSM.activity&quot;,x=1200.0,y=250.0}, tail={id=&quot;relation13.vertex1&quot;,x=1330.0,y=250.0}, points={} },{ head={id=&quot;LabelDisplay2.input&quot;,x=1385.0,y=310.0}, tail={id=&quot;relation13.vertex1&quot;,x=1330.0,y=250.0}, points={1330.0,310.0} },{ head={id=&quot;emergencyDelay.activity&quot;,x=1395.0,y=250.0}, tail={id=&quot;relation13.vertex1&quot;,x=1330.0,y=250.0}, points={} } }">
+        </property>
+    </relation>
+    <relation name="relation14" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;CSVSignalReader.trigger&quot;,x=225.0,y=180.0}, tail={id=&quot;DiscreteClock.output&quot;,x=55.0,y=170.0}, points={} } }">
         </property>
     </relation>
     <relation name="relation15" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="{1160.0, 140.0}">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;label.label&quot;,x=455.0,y=45.0}, tail={id=&quot;LabelDisplay.input&quot;,x=585.0,y=65.0}, points={} } }">
+        </property>
+    </relation>
+    <relation name="relation11" class="ptolemy.actor.TypedIORelation">
+        <vertex name="vertex1" value="{900.0, 115.0}">
         </vertex>
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;relation15.vertex1&quot;,x=1160.0,y=140.0}, tail={id=&quot;ActivityDetectionFSM.activity&quot;,x=1030.0,y=140.0}, points={} },{ head={id=&quot;LabelDisplay2.input&quot;,x=1215.0,y=205.0}, tail={id=&quot;relation15.vertex1&quot;,x=1160.0,y=140.0}, points={1160.0,205.0} },{ head={id=&quot;AlarmActor.activity&quot;,x=1225.0,y=140.0}, tail={id=&quot;relation15.vertex1&quot;,x=1160.0,y=140.0}, points={} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;AccelerationComputer.acceleration&quot;,x=755.0,y=115.0}, tail={id=&quot;relation11.vertex1&quot;,x=900.0,y=115.0}, points={} },{ head={id=&quot;AccelerationPlotter.input&quot;,x=965.0,y=115.0}, tail={id=&quot;relation11.vertex1&quot;,x=900.0,y=115.0}, points={} },{ head={id=&quot;GuardsCalculator.acceleration&quot;,x=1015.0,y=250.0}, tail={id=&quot;relation11.vertex1&quot;,x=900.0,y=115.0}, points={900.0,250.0} } }">
+        </property>
+    </relation>
+    <relation name="relation16" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;ActivityDetectionFSM.isWalking&quot;,x=1200.0,y=250.0}, tail={id=&quot;GuardsCalculator.isWalking&quot;,x=1015.0,y=250.0}, points={} } }">
+        </property>
+    </relation>
+    <relation name="relation17" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;ActivityDetectionFSM.isJogging&quot;,x=1200.0,y=250.0}, tail={id=&quot;GuardsCalculator.isJogging&quot;,x=1015.0,y=250.0}, points={} } }">
+        </property>
+    </relation>
+    <relation name="relation18" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;ActivityDetectionFSM.isFall&quot;,x=1200.0,y=250.0}, tail={id=&quot;GuardsCalculator.isFall&quot;,x=1015.0,y=250.0}, points={} } }">
+        </property>
+    </relation>
+    <relation name="relation3" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyroscope.gyro_z_list&quot;,x=450.0,y=245.0}, tail={id=&quot;RotationComputer.gyro_z&quot;,x=765.0,y=260.0}, points={535.0,275.0,535.0,280.0,645.0,280.0,645.0,270.0} } }">
+        </property>
+    </relation>
+    <relation name="relation7" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;gyroscope.gyro_x_list&quot;,x=450.0,y=245.0}, tail={id=&quot;RotationComputer.gyro_x&quot;,x=765.0,y=260.0}, points={535.0,255.0,535.0,250.0} } }">
+        </property>
+    </relation>
+    <relation name="relation4" class="ptolemy.actor.TypedIORelation">
+        <vertex name="vertex1" value="{675.0, 105.0}">
+        </vertex>
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;AnglePitchComputer.acc_x&quot;,x=760.0,y=180.0}, tail={id=&quot;relation4.vertex1&quot;,x=675.0,y=105.0}, points={675.0,160.0} },{ head={id=&quot;AccelerationComputer.acc_x&quot;,x=755.0,y=115.0}, tail={id=&quot;relation4.vertex1&quot;,x=675.0,y=105.0}, points={} },{ head={id=&quot;accelerometer.accel_x_list&quot;,x=430.0,y=150.0}, tail={id=&quot;relation4.vertex1&quot;,x=675.0,y=105.0}, points={535.0,160.0,535.0,105.0} } }">
         </property>
     </relation>
     <relation name="relation" class="ptolemy.actor.TypedIORelation">
-        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;CSVReader.trigger&quot;,x=230.0,y=220.0}, tail={id=&quot;DiscreteClock.output&quot;,x=65.0,y=210.0}, points={} } }">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;CSVSignalReader.endOfFile&quot;,x=225.0,y=180.0}, tail={id=&quot;Stop.input&quot;,x=370.0,y=215.0}, points={320.0,190.0,320.0,215.0} } }">
         </property>
     </relation>
-    <link port="CSVReader.output" relation="relation3"/>
-    <link port="CSVReader.trigger" relation="relation"/>
-    <link port="CSVReader.endOfFile" relation="relation2"/>
-    <link port="Stop.input" relation="relation2"/>
-    <link port="gyroscope.input" relation="relation3"/>
+    <link port="CSVSignalReader.output" relation="relation2"/>
+    <link port="CSVSignalReader.trigger" relation="relation14"/>
+    <link port="CSVSignalReader.endOfFile" relation="relation"/>
+    <link port="Stop.input" relation="relation"/>
+    <link port="gyroscope.input" relation="relation2"/>
     <link port="gyroscope.gyro_x_list" relation="relation7"/>
     <link port="gyroscope.gyro_y_list" relation="relation8"/>
-    <link port="gyroscope.gyro_z_list" relation="relation9"/>
-    <link port="label.input" relation="relation3"/>
-    <link port="label.label" relation="relation10"/>
-    <link port="LabelDisplay.input" relation="relation10"/>
-    <link port="accelerometer.input" relation="relation3"/>
+    <link port="gyroscope.gyro_z_list" relation="relation3"/>
+    <link port="accelerometer.input" relation="relation2"/>
     <link port="accelerometer.accel_x_list" relation="relation4"/>
     <link port="accelerometer.accel_y_list" relation="relation5"/>
     <link port="accelerometer.accel_z_list" relation="relation6"/>
     <link port="RotationComputer.gyro_x" relation="relation7"/>
     <link port="RotationComputer.gyro_y" relation="relation8"/>
-    <link port="RotationComputer.gyro_z" relation="relation9"/>
-    <link port="RotationComputer.rotation_rate" relation="relation11"/>
+    <link port="RotationComputer.gyro_z" relation="relation3"/>
+    <link port="RotationComputer.rotation_rate" relation="relation10"/>
     <link port="AccelerationComputer.acc_x" relation="relation4"/>
     <link port="AccelerationComputer.acc_y" relation="relation5"/>
     <link port="AccelerationComputer.acc_z" relation="relation6"/>
-    <link port="AccelerationComputer.acceleration" relation="relation12"/>
-    <link port="AccelerationPlotter.input" relation="relation12"/>
-    <link port="RotationPlotter.input" relation="relation11"/>
+    <link port="AccelerationComputer.acceleration" relation="relation11"/>
+    <link port="AccelerationPlotter.input" relation="relation11"/>
+    <link port="RotationPlotter.input" relation="relation10"/>
     <link port="AnglePitchComputer.acc_x" relation="relation4"/>
     <link port="AnglePitchComputer.acc_y" relation="relation5"/>
     <link port="AnglePitchComputer.acc_z" relation="relation6"/>
     <link port="AnglePitchComputer.gyro_y" relation="relation8"/>
-    <link port="AnglePitchComputer.angle_pitch" relation="relation13"/>
-    <link port="AnglePitchPlotter.input" relation="relation13"/>
-    <link port="LabelDisplay2.input" relation="relation15"/>
-    <link port="ActivityDetectionFSM.angle_pitch" relation="relation12"/>
-    <link port="ActivityDetectionFSM.acceleration" relation="relation13"/>
-    <link port="ActivityDetectionFSM.activity" relation="relation15"/>
-    <link port="ActivityDetectionFSM.rotationrate" relation="relation11"/>
-    <link port="DiscreteClock.output" relation="relation"/>
-    <link port="AlarmActor.activity" relation="relation15"/>
+    <link port="AnglePitchComputer.angle_pitch" relation="relation12"/>
+    <link port="AnglePitchPlotter.input" relation="relation12"/>
+    <link port="LabelDisplay2.input" relation="relation13"/>
+    <link port="DiscreteClock.output" relation="relation14"/>
+    <link port="emergencyDelay.activity" relation="relation13"/>
+    <link port="ActivityDetectionFSM.isWalking" relation="relation16"/>
+    <link port="ActivityDetectionFSM.isJogging" relation="relation17"/>
+    <link port="ActivityDetectionFSM.activity" relation="relation13"/>
+    <link port="ActivityDetectionFSM.isFall" relation="relation18"/>
+    <link port="label.input" relation="relation2"/>
+    <link port="label.label" relation="relation15"/>
+    <link port="LabelDisplay.input" relation="relation15"/>
+    <link port="GuardsCalculator.angle_pitch" relation="relation12"/>
+    <link port="GuardsCalculator.acceleration" relation="relation11"/>
+    <link port="GuardsCalculator.rotationrate" relation="relation10"/>
+    <link port="GuardsCalculator.isWalking" relation="relation16"/>
+    <link port="GuardsCalculator.isJogging" relation="relation17"/>
+    <link port="GuardsCalculator.isFall" relation="relation18"/>
 </entity>
