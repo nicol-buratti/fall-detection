@@ -34,7 +34,7 @@ uv run generate_data_for_ptolemy.py
 ```
 2. **Analyze and Model**:
     - Open and run the `activity_detection.ipynb` notebook to see how the Decision Tree and FSM transition rules are generated.
-    - The `model_fall_detection.xml` file can be used with Ptolemy II to simulate and test the fall detection model.
+    - The `model_fall_detection.xml` file can be used with [Ptolemy II](https://ptolemy.berkeley.edu/ptolemyII/index.htm) to simulate and test the fall detection model.
 
 ## License
 This project is licensed under the AGPL-3.0 License. See the LICENSE file for details.
